@@ -1,0 +1,141 @@
+.images{
+//    height: 0%;
+    .logo-btn{
+        display: flex  ;        
+        justify-content: space-between ;
+        
+        button{
+            width: 120px;
+            height: 40px;
+            border: none;
+            color: #e53935;
+            background-color: #f9f9f9;
+            font-size: 12px;
+        }
+        
+        
+        
+    }
+    .logo{
+        width: 160px;
+    }
+    
+    .background{
+        // background-image: url("/assets/images/Emily-Henderson_Ajai-Guyot_Small-Space_Living-Room-Layout_Opener.webp");
+        // background-color: #e53935;
+        // width: 100%;
+        // height: 50vh;  
+        position: relative;
+        // background-size: cover;
+        .searchbar{
+            background-color: white;
+            width: 690px;
+            height: 60px;
+            position: absolute;
+            top: 200px;
+            left:300px;
+            padding: 2px;
+
+        }
+        .searchbox{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            bottom: 2px;
+            right:1px;
+           padding: 5px;
+            border: none;
+            width: 670px;
+            justify-content: space-between;
+            height: 48px;
+            
+            
+        }
+        // .text{
+        //     width: 200px;
+        //     height: 45px;
+        //     outline: 0;
+        //     border: none;
+        //     background-color:#f0f0f0;
+        //     font-size: 12px;
+            
+        //     // height: 40px;
+        // }
+        #search-btn{
+            width: 120px;
+            padding: 15px;
+            border: none;
+            // height: 45px;
+            background-color: #e53935;
+            color: white;
+            
+        }
+        .hotel{
+            width: 112px;
+            height: 30px;
+        }
+        .dates{
+display: flex;
+margin: 0 5px;
+gap: 5px;
+align-items: center;
+            .date{
+                width: 80px;
+                padding: 2px;
+            }
+        }
+        .person{
+            width: 85px;
+            font-size: 10px;
+        }
+        #search-btn:hover{
+            background-color: orange;
+        }
+        p{
+            border: 1px solid black;
+            height: 18px;
+        }
+        .walpaper{
+            width: 100%;
+            height: 430px;
+            opacity: 0.8;
+        }
+    }
+    .top-selling{
+        display: flex;
+    }
+    .sample{
+        align-items: center;
+    }
+
+    
+    ::ng-deep{
+
+        .p-autocomplete-dd .p-autocomplete-dropdown {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-top: 10px;
+            margin-right: 10px;
+            height: 20px;
+           
+      
+        }
+        .p-autocomplete-dd .p-autocomplete-input, .p-autocomplete-dd .p-autocomplete-multiple-container {
+            border-top-right-radius:0;
+            border-bottom-right-radius: 0;
+            margin-top: 10px;
+            margin-left: 10px;
+            width: 120px;
+            height: 20px;
+            margin-bottom: 30px;
+        }
+        .p-autocomplete-item{
+            background-color: #f9f9f9;
+        }
+        .images[_ngcontent-uys-c60] .background[_ngcontent-uys-c60] p[_ngcontent-uys-c60]{
+            width: 20px;
+        }
+        
+    }
+    
+}

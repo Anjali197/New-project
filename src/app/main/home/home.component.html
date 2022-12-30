@@ -1,0 +1,55 @@
+<div class="images">
+  <div class="logo-btn">
+    <img src="/assets/images/image.png" class="logo" alt="" /><br />
+    <button id="butn" (click)="back()">Log Out</button>
+  </div>
+
+  <div class="background">
+    <img
+      src="/assets/images/Emily-Henderson_Ajai-Guyot_Small-Space_Living-Room-Layout_Opener.webp"
+      class="walpaper"
+      alt=""
+    />
+    
+    <div class="searchbar">
+      
+      <div class="searchbox">
+        <div class="search">
+<!-- <input type="text" placeholder="Search Location" class="text"> -->
+<select name="date" class="hotel" placeholder="any">
+  <option *ngFor="let list of property">{{ list.propertyName }}</option>
+</select>
+        </div>
+        
+        <div class="dates">
+          <input type="date" class="date" [value]="defaultCheckIn" />
+          <input type="date" class="date" [value]="defaultCheckOut" />
+          <p class="person">Adult:{{ adultCount }},Children: {{ childCount }}</p>
+        </div>
+        
+          <p-autoComplete
+            [(ngModel)]="text"
+            [suggestions]="results"
+            field="airportName"
+            class="prime"
+            (completeMethod)="search($event)"
+            [dropdown]="true"
+           
+          >
+            <ng-template let-value pTemplate="selectedItem">
+              <i class=""></i>
+              <span style="font-size: 18px; background-color: white;width:700px"
+                >>{{ airportName }}</span
+              >
+            </ng-template>
+          </p-autoComplete>
+          
+        
+        <button id="search-btn">Search</button>
+      </div>
+    </div>
+
+    <app-topselling></app-topselling>
+    <app-latest-project></app-latest-project>
+  </div>
+</div>

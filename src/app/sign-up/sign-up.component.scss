@@ -1,0 +1,108 @@
+
+ .box{
+    background-image: url("/assets/images/sign\ up\ image.jpg");
+    // background-repeat: no-repeat;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+    
+    // // background-color: rgb(127, 255, 138);
+    .container{
+        background-color: white;
+        width: 450px;
+        height:620px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        border-radius: 10px;
+        gap: 5px;
+        
+        
+    }
+
+
+.logo{
+    width: 160px;
+}
+h3{
+    margin: 0%;
+    font-size: 12px;
+    font-weight: lighter;
+}
+h1{
+    margin: 0%;
+    font-size: 20px;
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
+    
+}
+
+.fname{
+    outline: 0;
+    border: 0;
+    background-color: #e8f0fe;
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+
+}
+.phone{
+    outline: 0;
+    border: 0;
+    background-color: #e8f0fe;
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.email{
+    outline: 0;
+    border: 0;
+    background-color: #e8f0fe;
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.paswd{
+    outline: 0;
+    border: 0;
+    background-color: #e8f0fe;
+    width: 450px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.btn{
+    background-color: #f0bf9c;
+    color: white;
+    height: 30px;
+    border: 0;
+    border-radius: 2px;
+    font-size: 12PX;
+    width: 100px;
+    cursor: pointer;
+    
+   
+
+}
+.signin{
+    color: #eb8f35;
+    cursor: pointer;
+}
+.error-msg{
+    color: red;
+    font-size: 10px;
+}
+
+ }
+ 
