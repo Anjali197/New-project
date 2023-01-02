@@ -137,13 +137,14 @@
       <div class="item12">
         <label for="gender">Department</label><br />
         <p-dropdown
-          [options]="genderList"
+          [options]="departments"
           formControlName="selectedCity"
           placeholder="Select Department"
+          optionLabel="option"
         >
           <ng-template let-country pTemplate="item">
             <div class="country-item">
-              <div>{{ country.name }}</div>
+              <div>{{ country.option }}</div>
             </div>
           </ng-template>
         </p-dropdown>
@@ -181,13 +182,14 @@
       <div class="item15">
         <label for="gender">Manager</label><br />
         <p-dropdown
-          [options]="genderList"
+          [options]="managerList"
           formControlName="selectedCity"
           placeholder="Select Manager"
+          optionLabel="option"
         >
           <ng-template let-country pTemplate="item">
             <div class="country-item">
-              <div>{{ country.name }}</div>
+              <div>{{ country.option }}</div>
             </div>
           </ng-template>
         </p-dropdown>
@@ -196,13 +198,14 @@
       <div class="item16">
         <label for="gender">Probation Status</label><br />
         <p-dropdown
-          [options]="genderList"
+          [options]=" probList"
           formControlName="selectedCity"
           placeholder="Select Status"
+          optionLabel="option"
         >
           <ng-template let-country pTemplate="item">
             <div class="country-item">
-              <div>{{ country.name }}</div>
+              <div>{{ country.option }}</div>
             </div>
           </ng-template>
         </p-dropdown>
@@ -210,13 +213,14 @@
       <div class="item17">
         <label for="gender">Potential Period</label><br />
         <p-dropdown
-          [options]="genderList"
+          [options]="probpList"
           formControlName="selectedCity"
           placeholder="select gender"
+          optionLabel="option"
         >
           <ng-template let-country pTemplate="item">
             <div class="country-item">
-              <div>{{ country.name }}</div>
+              <div>{{ country.option }}</div>
             </div>
           </ng-template>
         </p-dropdown>
@@ -227,6 +231,7 @@
           [options]="genderList"
           formControlName="selectedCity"
           placeholder="Select Work Status"
+          
         >
           <ng-template let-country pTemplate="item">
             <div class="country-item">

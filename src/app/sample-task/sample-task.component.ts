@@ -12,6 +12,12 @@ export class SampleTaskComponent {
   genderList!: any;
   employeeType!:any;
   designations!:any;
+  departments!:any;
+  managerList!:any;
+  probList!:any;
+  probpList!:any;
+  workList!:any;
+
   constructor(private getApi: ApiCallService) {
     // this.gender = [{ name: 'male' }, { name: 'female' }];
   }
@@ -31,7 +37,26 @@ this.employeeType=respo;
       console.log('des',resp);
       this.designations=resp;
     })
-    
+    this.getApi.department().subscribe((respon)=>{
+      console.log('dep',respon);
+      this.departments=respon;
+  })
+  this.getApi.manager().subscribe((respn)=>{
+    console.log('mang',respn);
+    this.managerList=respn;
+})
+this.getApi.probation().subscribe((respns)=>{
+  console.log('prob',respns);
+  this.probList=respns;
+})
+this.getApi.probPeriod().subscribe((respp)=>{
+  console.log('properd',respp);
+  this.probpList=respp;
+})
+this.getApi.work().subscribe((ress)=>{
+  console.log('work',ress);
+  this.workList=ress;
+})
   }
 
 

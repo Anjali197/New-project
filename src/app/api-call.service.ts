@@ -29,5 +29,27 @@ url ='https://ihospitality-staging.ibsplc.net/ihospitalityretail-service/api/mas
   designation(){
     return this.http.get<any>(this.designtnurl)
   }
-
+  deptnurl='http://164.52.200.24:6204/options/get-options/Department';
+  department(){
+    return this.http.get<any>(this.deptnurl)
+  }
+  mangrurl='http://164.52.200.24:6204/options/get-options/Manager';
+  manager(){
+    return this.http.get<any>(this.mangrurl)
+  }
+  proburl='http://164.52.200.24:6204/options/get-options/Probation Status';
+  probation(){
+    return this.http.get<any>(this.proburl)
+  }
+  probpurl='http://164.52.200.24:6204/options/get-options/Probation Period';
+  probPeriod(){
+    return this.http.get<any>(this.probpurl)
+  }
+  workurl='http://164.52.200.24:6204/options/get-options/Work status';
+  work(){
+    return this.http.get<any>(this.workurl)
+  }
+  
 }
+
+
