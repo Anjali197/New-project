@@ -1,0 +1,280 @@
+<h1>Team</h1>
+<hr />
+<div class="icon-btn">
+  <h5>Upload Profile photo</h5>
+  <button pButton type="button" label="Send invite" id="topbtn"></button>
+</div><br>
+
+<div class="main-container">
+  <div class="menu-bar">
+    <ul>
+      <li>Profile</li>
+      <li>Punch Card</li>
+      <li>Quatas & Balance</li>
+      <li>Vacation Log</li>
+      <li>Pending Leaves</li>
+      <li>Projects</li>
+      <li>Documents</li>
+    </ul>
+  </div>
+  <br />
+  <hr />
+  <br />
+
+  <h3>Profile</h3>
+
+  <form [formGroup]="signupForm" (ngSubmit)="signUser(signupForm.value)">
+    <div class="sign-container">
+      <!-- <div class="flex1"> -->
+      <div class="item1">
+        <label for="fname">First Name*</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+      <div class="item2">
+        <label for="lname">Last Name*</label><br />
+        <input type="text" pInputText formControlName="lname" /> <br />
+      </div>
+      <div class="item3">
+        <label for="dob">Date of Birth</label><br />
+        <input type="text" pInputText formControlName="dob" /> <br />
+      </div>
+      <div class="item4">
+        <label for="gender">Gender</label><br />
+        <p-dropdown
+          [options]="genderList"
+          formControlName="selectedCity"
+          placeholder="select gender"
+          optionLabel="option"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+
+      <!-- <div class="flex1"> -->
+      <div class="item5">
+        <label for="fname">Email*</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+      <div class="item6">
+        <label for="lname">Mobile*</label><br />
+        <input type="text" pInputText formControlName="lname" /> <br />
+      </div>
+      <div class="item7">
+        <label for="dob">Joining Date</label><br />
+        <input type="text" pInputText formControlName="dob" /> <br />
+      </div>
+      <div class="item8">
+        <label for="gender">Employee Code*</label><br />
+        <div class="emplycode">
+          <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
+          <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
+          <p-dropdown
+            [options]="genderList"
+            optionLabel="name"
+            placeholder="NE/NT"
+          ></p-dropdown>
+          <!-- <ng-template let-country pTemplate="item">
+                  <div class="country-item">
+  
+                    <div>{{country.name}}</div>
+                  </div>
+                </ng-template> -->
+          <!-- </p-dropdown> -->
+
+          <input type="text" id="textbx" /> <br />
+        </div>
+      </div>
+
+      <!-- </div> -->
+      <!-- <div class="flex1"> -->
+      <div class="item9">
+        <label for="gender">Employee Type</label><br />
+        <textarea
+          [rows]="5.5"
+          [cols]="25"
+          pInputTextarea
+          [autoResize]="true"
+        ></textarea>
+      </div>
+
+      <div class="item10">
+        <label for="gender">Employee Type</label><br />
+        <p-dropdown
+          [options]="employeeType"
+          formControlName="selectedCity"
+          placeholder="Select Job Type"
+          optionLabel="option"
+        >
+        
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+              
+            </div>
+          </ng-template>
+          
+        </p-dropdown>
+      </div>
+      <div class="item11">
+        <label for="gender">Designation</label><br />
+        <p-dropdown
+          [options]="designations"
+          formControlName="selectedCity"
+          placeholder="Select Designation"
+          optionLabel="option"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="item12">
+        <label for="gender">Department</label><br />
+        <p-dropdown
+          [options]="departments"
+          formControlName="selectedCity"
+          placeholder="Select Department"
+          optionLabel="option"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+
+      <!-- <div class="flex4"> -->
+      <div class="item13">
+        <label for="gender">Project</label><br />
+        <p-dropdown
+          [options]="genderList"
+          formControlName="selectedCity"
+          placeholder="select gender"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div></div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="item14">
+        <label for="gender">Buddy</label><br />
+        <p-dropdown
+          [options]="genderList"
+          formControlName="selectedCity"
+          placeholder="Select Buddy"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.name }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="item15">
+        <label for="gender">Manager</label><br />
+        <p-dropdown
+          [options]="managerList"
+          formControlName="selectedCity"
+          placeholder="Select Manager"
+          optionLabel="option"
+          
+          
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+
+      <div class="item16">
+        <label for="gender">Probation Status</label><br />
+        <p-dropdown
+          [options]="probList"
+          formControlName="selectedCity"
+          placeholder="Select Status"
+          optionLabel="option"
+          
+
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="item17">
+        <label for="gender">Potential Period</label><br />
+        <p-dropdown
+          [options]="probpList"
+          formControlName="selectedCity"
+          placeholder="select gender"
+          optionLabel="option"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.option }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="item18">
+        <label for="gender">Work Status</label><br />
+        <p-dropdown
+          [options]="genderList"
+          formControlName="selectedCity"
+          placeholder="Select Work Status"
+        >
+          <ng-template let-country pTemplate="item">
+            <div class="country-item">
+              <div>{{ country.name }}</div>
+            </div>
+          </ng-template>
+        </p-dropdown>
+      </div>
+      <div class="item19">
+        <label for="gender">Salary</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+      <div class="item20">
+        <label for="fname">Daily Work Hours</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+      <div class="item21">
+        <label for="fname">Weekly Work Hours</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+      <div class="item22">
+        <label for="fname">Pan Number</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+      <div class="item23">
+        <label for="fname">Adhar Number</label><br />
+        <input type="text" pInputText formControlName="fname" /> <br />
+      </div>
+    </div>
+    <br />
+
+    <div class="btns">
+      <button pButton type="button" label="Create"></button>
+
+      <button
+        pButton
+        type="button"
+        label="Reset"
+        class="p-button-outlined"
+      ></button>
+    </div>
+  </form>
+</div>

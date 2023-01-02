@@ -1,0 +1,42 @@
+<div class="box">
+    <div class="container">
+        <img src="/assets/images/image.png"   class="logo" alt=""><br>
+    <h3>START FOR FREE</h3>
+    <h1>Create An Account</h1><br>
+    <div class="main-container">
+        <div class="sign-container">
+            <form [formGroup]="signupForm" (ngSubmit)="signUser(signupForm.value)">
+                <div class="flex">
+                    <label for="name">Name*</label><br>
+                    <input type="text" placeholder="Enter your name here" class="fname" formControlName='fname' ><br>
+                   
+                        
+                   
+                    <label for="phone">Phone*</label><br>
+                    <input type="tel" placeholder="Enter your mobile here" class="phone"  formControlName='phone' [ngClass]="{'input-error': phone?.invalid && phone?.touched}"><br>
+                    <div *ngIf="phone?.invalid && phone?.touched"  class="error-msg">phone must contain 10 character</div>
+                    <!-- <div *ngIf="phone?.invalid.minLength&& !phone?.invalid.required" class="error-msg">phone must contain 10 character</div> -->
+
+                    <label for="email">Email*</label><br>
+                    <input type="email" placeholder="Enter your email here" class="email" formControlName='email' [ngClass]="{'input-error': email?.invalid && email?.touched}"><br>
+                    <div *ngIf="email?.invalid && email?.touched" class="error-msg">invalid id</div>
+                    <label for="paswd">Password*</label><br>
+                    <input type="password"  class="paswd" formControlName='password' [ngClass]="{'input-error': password?.invalid && password?.touched}"><br>
+                    <div *ngIf="password?.invalid && password?.touched" class="error-msg">Must Contain 8 Characters Including Alphabet, Number, Uppercase Character And Special Character</div><br>
+                    <button class="btn"  [disabled]="!signupForm.valid" (click)="continue()">Create Account</button><br>
+                    <div class="account">
+                        <span>Already have an account? </span><span class="signin" (click)="go()" id="sign">Sign In</span>
+                    </div>
+                    
+                </div>
+                
+            </form>
+        </div>
+        
+        
+    </div>
+    
+    </div>
+    
+</div>
+

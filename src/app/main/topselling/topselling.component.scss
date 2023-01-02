@@ -1,0 +1,119 @@
+.h1 {
+  text-align: center;
+  margin: 0%;
+  
+  
+}
+.top-selling {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  // gap: 10px;
+  // background-color: #fce7e7;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  .grid-container {
+
+    .grid-items {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      outline: 1px solid rgb(241, 234, 234);
+      width: 280px;
+      height: 370px;
+      border-radius: 5px;
+      padding: 2px;
+      position: relative;
+      gap: 2px;
+      box-shadow: 0 0 0 rgba(201, 186, 186, 0.5);
+
+      // .grid-items:hover{
+      //     box-shadow: 0 10px 10px rgba(0,0,0,0.5)
+      // }
+      .image-and-sale {
+        position: relative;
+
+        img {
+          align-items: center;
+          justify-content: center;
+          padding: 15px;
+          border-radius: 20px;
+        }
+
+        h5 {
+          border-radius: 0 0 5px 5px;
+          text-align: center;
+          padding: 10px;
+          height: 12px;
+          width: 40px;
+          position: absolute;
+          top: 15px;
+          right: 25px;
+          margin: 0;
+          background-color: #fdf4ef;
+        }
+      }
+      h3 {
+        margin: 0;
+      }
+      .location-text {
+        display: flex;
+        align-items: center;
+
+        #h4-1 {
+          font-weight: lighter;
+          font-size: 15px;
+        }
+
+        #loction-image {
+          width: 18px;
+          height: 20px;
+        }
+      }
+
+      .price-button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      button {
+        height: 30px;
+        width: 90px;
+        background-color: #fce7e7;
+        color: #e83935;
+        border: none;
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      #btn:hover {
+        background-color: #e83935;
+        color: white;
+      }
+      .rupee-text {
+        display: flex;
+        justify-content: flex-start;
+        gap: 0px;
+        // justify-content: center;
+        align-items: center;
+        margin-left: 0px;
+        padding-left: 0;
+      }
+      // #price{
+      //     // margin: 0;
+      // }
+      #rupee {
+        width: 15px;
+        height: 15px;
+      }
+    }
+    .grid-items:hover {
+      box-shadow: 0px 0px 8px rgba(58, 57, 57, 0.24);
+    }
+    .flat2{
+        width: 250px;
+      height: 200px;
+    }
+  }
+}

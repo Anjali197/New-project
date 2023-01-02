@@ -1,0 +1,21 @@
+<div class="body">
+    <div class="box">
+        <img src="/assets/images/image.png"   class="logo" alt=""><br>
+        <h1>Login to your Account</h1><br>
+        <div class="container">
+            <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+                <div class="form">
+                    <label for="email" class="email">Email*</label><br>
+                    <input type="email" class="name" formControlName="email"><br>
+                    <label for="passwd" class="paswd">Password*</label><br>
+                    <input type="email" class="name" formControlName="password"><br>
+                    <button class="btn" [disabled]="!loginForm.valid" (click)="submit()">Sign In Now</button>
+            
+                </div>
+               
+            </form>
+        </div>
+    </div>
+</div>
+
+
