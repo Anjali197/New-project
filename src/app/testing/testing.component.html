@@ -1,82 +1,74 @@
+<p>testing works!</p>
 <div class="sidebar-teamcontainer">
-  <div class="sidebar">
-    <p>NINTRIVA</p>
-  </div>
-  <div class="team-container">
-    <div class="team-image">
-      <h1>Team</h1>
-      <img   id="userimg" src="/assets/images/nms.svg" alt="" />
+    <div class="sidebar">
+  <p>NINTRIVA</p>
     </div>
-
-    <hr />
-    <br />
-    <div class="icon-btn">
-      <div class="icon-text">
-        <img src="/assets/images/Profile avatar.svg" alt="" />
-        <div class="h5">
-          <span>Upload Profile</span>
-          <span>Photo</span>
+    <div class="team-container">
+      <div class="team-image">
+        <h1>Team</h1>
+        <img src="/assets/images/nms.svg" alt="">
+      </div>
+      
+      <hr /><br>
+      <div class="icon-btn">
+        <div class="icon-text">
+          <img src="/assets/images/Profile avatar.svg" alt="">
+          <div class="h5">
+            
+            <span>Upload Profile</span>
+            <span>Photo</span>
+          </div>
+          
         </div>
+        
+        <button pButton type="button" label="Send invite" id="topbtn"></button>
       </div>
-
-      <button  pButton type="button" label="Send invite" id="topbtn"></button>
-    </div>
-    <br />
-
-    <div class="main-container">
-      <div class="menu-bar">
-        <ul>
-          <li id="profile">Profile</li>
-
-          <li class="disable">Punch Card</li>
-          <li class="disable">Quatas & Balance</li>
-          <li class="disable">Vacation Log</li>
-          <li class="disable">Pending Leaves</li>
-          <li class="disable">Projects</li>
-          <li class="disable">Documents</li>
-        </ul>
-      </div>
-      <br />
+      <br>
       
-      <br />
-<div class="profile"><h3 class="profile_text">Profile</h3></div>
+      <div class="main-container">
+        <div class="menu-bar">
+          <ul>
+            <li id="profile">Profile</li>
+            <li class="disable">Punch Card</li>
+            <li class="disable">Quatas & Balance</li>
+            <li class="disable">Vacation Log</li>
+            <li class="disable">Pending Leaves</li>
+            <li class="disable">Projects</li>
+            <li class="disable">Documents</li>
+          </ul>
+        </div>
+        <br />
+        <hr />
+        <br />
       
-      <br />
-      <div class="form">
-        <form [formGroup]="signupForm" (ngSubmit)="signUser(signupForm.value)">
+        <h3>Profile</h3>
+      
+        <form [formGroup]="regForm" (ngSubmit)="onsubmit">
           <div class="sign-container">
             <!-- <div class="flex1"> -->
             <div class="item1">
               <label for="fname">First Name*</label><br />
-              <input type="text" pInputText formControlName="firstName" /> <br />
-              <div
-                *ngIf="firstName?.invalid && firstName?.touched"
-                class="error-msg"
-              >
-                First Name is required
+              <input type="text" pInputText formControlName="fname" /> <br />
+              <div *ngIf="submit&& f.fname.errors"  class="error-msg">
+                <div > First Name is required</div>
               </div>
             </div>
             <div class="item2">
               <label for="lname">Last Name*</label><br />
-              <input type="text" pInputText formControlName="lastName" /> <br />
-              <div
-                *ngIf="lastName?.invalid && lastName?.touched"
-                class="error-msg"
-              >
-                Last Name is required
-              </div>
+              <input type="text" pInputText formControlName="lname" /> <br />
+              <div  class="error-msg">Last Name is required</div>
+              
             </div>
             <div class="item3">
               <label for="dob">Date of Birth</label><br />
-              <p-calendar formControlName="dateOfBirth"  class="calender" ></p-calendar>
-             
-              <br />
+              <p-calendar ></p-calendar> <br />
+              
             </div>
             <div class="item4">
               <label for="gender">Gender</label><br />
               <p-dropdown
                 [options]="genderList"
-                formControlName="gender"
+                formControlName="selectedCity"
                 placeholder="select gender"
                 optionLabel="option"
               >
@@ -87,70 +79,47 @@
                 </ng-template>
               </p-dropdown>
             </div>
-  
+      
             <!-- <div class="flex1"> -->
             <div class="item5">
-              <label for="phone">Email*</label><br />
-              <input type="email" pInputText formControlName="email" /> <br />
-              <div *ngIf="email?.value == '' && email?.touched" class="error-msg">
-                Email is required
-              </div>
-              <div
-                *ngIf="email?.invalid && email?.touched && email?.dirty"
-                class="error-msg"
-              >
-                Invalid Email
-              </div>
+              <label for="fname">Email*</label><br />
+              <input type="text" pInputText formControlName="fname" /> <br />
+              <div  class="error-msg">Email is required</div>
             </div>
             <div class="item6">
-              <label for="phone">Mobile*</label><br />
-              <input type="text" pInputText formControlName="phoneNumber" />
-              <br />
-              <div
-                *ngIf="!phoneNumber?.value && phoneNumber?.touched"
-                class="error-msg"
-              >
-                Phone number is required
-              </div>
-              <div
-                *ngIf="
-                  signupForm.get('phoneNumber')?.hasError('minlength') &&
-                  signupForm.get('phoneNumber')?.touched
-                "
-                class="error-msg"
-              >
-                Phone Number must contain 10 digits
-              </div>
+              <label for="lname">Mobile*</label><br />
+              <input type="text" pInputText formControlName="phone" /> <br />
+              <div class="error-msg">Phone number is required</div>
+              
             </div>
             <div class="item7">
               <label for="dob">Joining Date</label><br />
-              <p-calendar formControlName="joiningDate" class="calender"></p-calendar>
-              
-              <br />
+              <input type="text" pInputText formControlName="dob" /> <br />
             </div>
             <div class="item8">
               <label for="gender">Employee Code*</label><br />
               <div class="emplycode">
-                <p-dropdown
-                  [options]="empcodeLiist"
-                  formControlName="employeeCode"
-                  placeholder="NE/NT"
-                  optionLabel="option"
-                  (onChange)="select()"
-                >
-                  <ng-template let-employeeCode pTemplate="item">
-                    <div class="country-item">
-                      <div>{{ employeeCode.option }}</div>
-                    </div>
-                  </ng-template>
-                </p-dropdown>
+                <p-dropdown 
+                [options]="empcodeLiist"
+                formControlName="employeeCode"
+                placeholder="NE/NT"
+                optionLabel="option"
+                
+              >
+                <ng-template let-country pTemplate="item">
+                  <div class="country-item">
+                    <div>{{ country.option }}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
                 <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
                 <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
-  
+                
+      
                 <input type="text" id="textbx" [value]="code" /> <br />
               </div>
             </div>
-  
+      
             <!-- </div> -->
             <!-- <div class="flex1"> -->
             <div class="item9">
@@ -160,30 +129,32 @@
                 [cols]="25"
                 pInputTextarea
                 [autoResize]="true"
-                formControlName="employeeAddress"
               ></textarea>
             </div>
-  
+      
             <div class="item10">
               <label for="gender">Employee Type</label><br />
               <p-dropdown
                 [options]="employeeType"
-                formControlName="employeeType"
+                formControlName="selectedCity"
                 placeholder="Select Job Type"
                 optionLabel="option"
               >
-                <ng-template let-employeeTyp pTemplate="item">
+              
+                <ng-template let-country pTemplate="item">
                   <div class="country-item">
-                    <div>{{ employeeTyp.option }}</div>
+                    <div>{{ country.option }}</div>
+                    
                   </div>
                 </ng-template>
+                
               </p-dropdown>
             </div>
             <div class="item11">
               <label for="gender">Designation</label><br />
               <p-dropdown
                 [options]="designations"
-                formControlName="designation"
+                formControlName="selectedCity"
                 placeholder="Select Designation"
                 optionLabel="option"
               >
@@ -198,7 +169,7 @@
               <label for="gender">Department</label><br />
               <p-dropdown
                 [options]="departments"
-                formControlName="department"
+                formControlName="selectedCity"
                 placeholder="Select Department"
                 optionLabel="option"
               >
@@ -209,18 +180,12 @@
                 </ng-template>
               </p-dropdown>
             </div>
-  
+      
             <!-- <div class="flex4"> -->
             <div class="item13">
               <div class="projects">
                 <label for="gender">Project</label><br />
-                <p-multiSelect
-                  [options]="projectList"
-                  display="chip"
-                  optionLabel="option"
-                  placeholder="Project"
-                  formControlName="projects"
-                >
+                <p-multiSelect [options]="projectList"  display="chip" optionLabel="option"  placeholder="Project">
                   <ng-template let-country pTemplate="item">
                     <div class="country-item">
                       <div>{{ country.option }}</div>
@@ -228,12 +193,13 @@
                   </ng-template>
                 </p-multiSelect>
               </div>
+             
             </div>
             <div class="item14">
               <label for="gender">Buddy</label><br />
               <p-dropdown
                 [options]="buddyList"
-                formControlName="buddy"
+                formControlName="selectedCity"
                 placeholder="Select Buddy"
                 optionLabel="name"
               >
@@ -248,7 +214,7 @@
               <label for="gender">Manager</label><br />
               <p-dropdown
                 [options]="managerList"
-                formControlName="manager"
+                formControlName="selectedCity"
                 placeholder="Select Manager"
                 optionLabel="option"
               >
@@ -259,47 +225,49 @@
                 </ng-template>
               </p-dropdown>
             </div>
-  
+      
             <div class="item16">
               <label for="gender">Probation Status</label><br />
               <p-dropdown
-                [options]="probList"
-                formControlName="probationStatus"
+                [options]=" probList"
+                formControlName="selectedCity"
                 placeholder="Select Status"
                 optionLabel="option"
               >
                 <ng-template let-country pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option}}</div>
+                    <div>{{ country.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
             <div class="item17">
+      
               <label for="gender">Probation Period</label><br />
-              <div class="probper-month">
-                <p-dropdown
-                  [options]="probpList"
-                  formControlName="probationPeriod"
-                  placeholder="select gender"
-                  optionLabel="option"
-                >
-                  <ng-template let-country pTemplate="item">
-                    <div class="country-item">
-                      <div>{{ country.option }}</div>
-                    </div>
-                  </ng-template>
-                </p-dropdown>
-                <button id="btn">Months</button>
-              </div>
+              <div class="probper-month"><p-dropdown
+                [options]="probpList"
+                formControlName="selectedCity"
+                placeholder="select gender"
+                optionLabel="option"
+              >
+                <ng-template let-country pTemplate="item">
+                  <div class="country-item">
+                    <div>{{ country.option }}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
+              <button id="btn">Months</button>
+            </div>
+              
             </div>
             <div class="item18">
               <label for="gender">Work Status</label><br />
               <p-dropdown
                 [options]="workList"
-                formControlName="workStatus"
+                formControlName="selectedCity"
                 placeholder="Select Work Status"
                 optionLabel="option"
+                
               >
                 <ng-template let-country pTemplate="item">
                   <div class="country-item">
@@ -310,72 +278,46 @@
             </div>
             <div class="item19">
               <label for="gender">Salary</label><br />
-              <input type="text" pInputText formControlName="salary" /> <br />
+              <input type="text" pInputText formControlName="fname" /> <br />
             </div>
             <div class="item20">
               <label for="fname">Daily Work Hours</label><br />
-              <input type="text" pInputText formControlName="dailyWorkHours" />
-              <br />
+              <input type="text" pInputText formControlName="fname" /> <br />
             </div>
             <div class="item21">
               <label for="fname">Weekly Work Hours</label><br />
-              <input type="text" pInputText formControlName="weeklyWorkHours" />
-              <br />
+              <input type="text" pInputText formControlName="fname" /> <br />
             </div>
             <div class="item22">
               <label for="fname">Pan Number</label><br />
-              <input type="text" pInputText formControlName="panCard" /> <br />
-              <div
-                *ngIf="
-                  signupForm.get('panCard')?.hasError('minlength') &&
-                  signupForm.get('panCard')?.touched
-                "
-                class="error-msg"
-              >
-                Pan card Number must contains 10 values
-              </div>
+              <input type="text" pInputText formControlName="fname" /> <br />
             </div>
             <div class="item23">
               <label for="fname">Adhar Number</label><br />
-              <input type="text" pInputText formControlName="aadharNumber" />
-              <br />
-              <div
-                *ngIf="
-                  signupForm.get('aadharNumber')?.hasError('minlength') &&
-                  signupForm.get('aadharNumber')?.touched
-                "
-                class="error-msg"
-              >
-                Aadhar Number must contains 13 digits
-              </div>
+              <input type="text" pInputText formControlName="fname" /> <br />
             </div>
           </div>
           <br />
-          <br />
-          <br />
-  
+          <br>
+          <br>
+      
           <div class="btns">
-            <button
-              pButton
-              type="submit"
-              label="Create"
-              (click)="validateForm()"
-            id="createBtn"
-              ></button>
-  
+            <button pButton type="submit" label="Create"></button>
+      
             <button
               pButton
               type="button"
               label="Reset"
               class="p-button-outlined"
-              id="resetbtn"
-              (click)="onSubmit()"
             ></button>
           </div>
+        
         </form>
       </div>
-
       
     </div>
+  
+  
   </div>
-</div>
+  
+  

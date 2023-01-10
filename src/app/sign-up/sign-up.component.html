@@ -13,8 +13,8 @@
                         
                    
                     <label for="phone">Phone*</label><br>
-                    <input type="tel" placeholder="Enter your mobile here" class="phone"  formControlName='phone' [ngClass]="{'input-error': phone?.invalid && phone?.touched}"><br>
-                    <div *ngIf="phone?.invalid && phone?.touched"  class="error-msg">phone must contain 10 character</div>
+                    <input type="tel" placeholder="Enter your mobile here" class="phone"  formControlName='phone' [ngClass]="{'input-error': phone?.invalid && phone?.valid}"><br>
+                    <div *ngIf="phone?.invalid && phone?.valid"  class="error-msg">phone must contain 10 character</div>
                     <!-- <div *ngIf="phone?.invalid.minLength&& !phone?.invalid.required" class="error-msg">phone must contain 10 character</div> -->
 
                     <label for="email">Email*</label><br>

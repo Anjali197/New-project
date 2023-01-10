@@ -22,6 +22,10 @@ import {InputTextModule} from 'primeng/inputtext';
 
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {ButtonModule} from 'primeng/button';
+import {MultiSelectModule} from 'primeng/multiselect';
+import { TestingComponent } from './testing/testing.component';
+import {CalendarModule} from 'primeng/calendar';
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -34,7 +38,8 @@ import {ButtonModule} from 'primeng/button';
     TopsellingComponent,
     LatestProjectComponent,
     HomeComponent,
-    SampleTaskComponent
+    SampleTaskComponent,
+    TestingComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +52,9 @@ import {ButtonModule} from 'primeng/button';
     DropdownModule,
     InputTextModule,
     InputTextareaModule,
-    ButtonModule
+    ButtonModule,MultiSelectModule,
+    CalendarModule,
+    DatePipe
 
 
 
