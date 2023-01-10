@@ -30,3 +30,13 @@ export interface designationTest{
   label: string;
   option: string;
 }
+export interface deptTest{
+  optionId: number;
+  label: string;
+  option: string;
+}
+export interface mangerTest{
+  optionId: number;
+  label: string;
+  option: string;
+}
