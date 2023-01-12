@@ -26,7 +26,8 @@ import {MultiSelectModule} from 'primeng/multiselect';
 import { TestingComponent } from './testing/testing.component';
 import {CalendarModule} from 'primeng/calendar';
 import {DatePipe} from '@angular/common';
-
+import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,9 @@ import {DatePipe} from '@angular/common';
     InputTextareaModule,
     ButtonModule,MultiSelectModule,
     CalendarModule,
-    DatePipe
+    DatePipe,
+    MessagesModule,
+    MessageModule
 
 
 

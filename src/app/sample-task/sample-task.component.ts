@@ -25,7 +25,7 @@ export class SampleTaskComponent {
   code: any = '';
 
 
-  // message!:string;
+  msgs: any;
   constructor(private getApi: ApiCallService, private signInService:SampleTaskService ) {
     // this.gender = [{ name: 'male' }, { name: 'female' }];
   }
@@ -153,8 +153,10 @@ export class SampleTaskComponent {
   signUser(item: any) {
     this.signInService.signIn(item,this.neList).subscribe((response)=>{
       console.log('results', response);
-      console.log('message',response.results.message);
-      // this.message =response.results.message
+      console.log('message',response.message);
+      this.msgs =response.message
+      console.log(this.msgs);
+      
       
     })
     console.log('signupForm', item);
