@@ -3,11 +3,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ApiCallService } from '../api-call.service';
 import { genderTest } from '../main/home/api.type';
 import { SampleTaskService } from './sample-task.service';
+import { MessageService } from 'primeng/api';
 // type Gender = { name: string };
 @Component({
   selector: 'app-sample-task',
   templateUrl: './sample-task.component.html',
   styleUrls: ['./sample-task.component.scss'],
+  providers: [MessageService],
 })
 export class SampleTaskComponent {
   genderList!: any;
@@ -26,7 +28,7 @@ export class SampleTaskComponent {
 
 
   msgs: any;
-  constructor(private getApi: ApiCallService, private signInService:SampleTaskService ) {
+  constructor(private getApi: ApiCallService, private signInService:SampleTaskService , private messageService: MessageService,) {
     // this.gender = [{ name: 'male' }, { name: 'female' }];
   }
   ngOnInit(): void {
@@ -156,7 +158,15 @@ export class SampleTaskComponent {
       console.log('message',response.message);
       this.msgs =response.message
       console.log(this.msgs);
-      
+
+
+
+      this.messageService.add({
+        
+        severity: 'success',
+        summary: 'Success',
+        detail: 'this.msgs',
+    }); 
       
     })
     console.log('signupForm', item);
@@ -170,6 +180,12 @@ export class SampleTaskComponent {
       this.aadharNumber?.markAsTouched();
       this.panCard?.markAsTouched();
     }
+    
+      
+    
+      
+    
+    
     // alert(this.message);
   }
 

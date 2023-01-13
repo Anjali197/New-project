@@ -28,6 +28,7 @@ import {CalendarModule} from 'primeng/calendar';
 import {DatePipe} from '@angular/common';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,7 @@ import {MessageModule} from 'primeng/message';
     CalendarModule,
     DatePipe,
     MessagesModule,
-    MessageModule
+    MessageModule, ToastModule,
 
 
 
