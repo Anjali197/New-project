@@ -13,13 +13,15 @@
 //   border: 1px solid #ced4da;
 }
 :host ::ng-deep .p-dropdown:focus:enabled,
-:host ::ng-deep .p-dropdown:active{
-  box-shadow: none;
+:host ::ng-deep .p-dropdown:hover{
+  box-shadow: red;
   background:none;
   border-color: #ced4da;
   // border: none;
 //   border: 1px solid #ced4da;
 }
+
+
 hr{
 background-color: #CDCDCD;
   ;
@@ -69,8 +71,11 @@ background-color: #CDCDCD;
  
   }
   .team-container {
-    width: 1132px;
-    height: 1080px;
+    // width: 1132px;
+    // height: 1080px;
+    height: 100vh;
+    width: calc(100% - 257px);
+    margin-left: 257px ;
     .line{
       width: 1132px;
       height: 1px;
@@ -97,9 +102,9 @@ background-color: #CDCDCD;
 
   box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.05);
   // text-align: center;
-
-  width: 1132px;
-  height: 795px;
+margin-left: 257px;
+  width: 82%;
+  height: 52.25rem;
   align-items: center;
 
   background-color: white;
@@ -130,6 +135,8 @@ h3 {
   font-size: 16px;
   font-weight: 700;
   padding: 8px;
+
+  padding-left: 20px;
 }
 
 .h5 {
@@ -171,6 +178,7 @@ img {
     width: max-content;
     gap: 55px;
     padding-right: 25px;
+    margin-left: 31px;
    
   }
 }
@@ -180,7 +188,9 @@ img {
   border-bottom: 3px solid #3bbca0;
   padding: 12px;
 }
-
+label{
+  font-size: 12px;
+}
 // .flex1{
 //     display: flex;
 //     justify-content: space-around;
@@ -194,16 +204,23 @@ img {
 .sign-container {
   display: grid;
   grid-template-columns: auto auto auto auto;
+  column-gap: 20px;
   //     // gap: 10px;
   //     // background-color: #fce7e7;
   //     padding: 5px;
   //     align-items: center;
-  justify-content: space-around;
-  gap: 27px;
+  justify-content: space-evenly;
+  
+  gap: 20px;
   font-family: "roboto", sans-serif;
   font-size: 12px;
   font-weight: 600;
   color: #9d9d9d;
+  .top-label{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
   //
   .item9 {
     grid-row: 3 / span 2;
@@ -292,28 +309,42 @@ img {
   align-items: center;
   justify-content: center;
   gap: 20px;
+  font-family: "Raleway", sans-serif;
 }
 ::ng-deep {
   .p-inputtext {
     font-size: 12px;
     border-radius: 3px;
   }
+  .p-dropdown{
+    transition: none;
+  }
   .p-inputtext:enabled:invalid:not(form) {
     border: 0 none;
   }
   .p-inputtext:hover {
     box-shadow: 0 0 0 0 !important;
-    border-color: #d7dce0 !important;
+    border-color: #3bbca0 !important;
   }
-  .p-dropdown:hover {
-    box-shadow: 0 0 0 0 !important;
-    border-color: #d7dce0 !important;
+  // .p-dropdown:hover {
+  //   box-shadow: 0 0 0 0 !important;
+  //   border-color: #d7dce0 !important;
+  // }
+  // .p-dropdown:not(.p-disabled) .p-dropdown:focus:disabled{
+  //   box-shadow: 0 0 0 0 !important;
+  //   border-color: #d7dce0 !important;
+  // }
+  .p-dropdown:not(.p-disabled).p-focus{
+    box-shadow:none;
+    border-color:#3bbca0;
   }
-  .p-dropdown::after {
-    box-shadow: 0 0 0 0 !important;
-    border-color: #d7dce0 !important;
+  // .p-dropdown::after {
+  //   box-shadow: 0 0 0 0 !important;
+  //   border-color: #d7dce0 !important;
+  // }
+  .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight{
+    color: #3bbca0;
   }
-
  
   .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
     background-color: #3bbca0;
@@ -339,15 +370,23 @@ img {
     align-items: center;
     font-size: 14px;
     border-radius: 3px;
+    color: #000000;
   }
 
   .p-dropdown ::placeholder {
     text-overflow: ellipsis;
     // overflow: visible;
   }
+  .p-multiselect-panel .p-multiselect-items .p-multiselect-item:focus{
+    box-shadow: none;
+  }
   .p-inputtext {
     width: 221px;
     height: 36px;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "roboto", sans-serif;
   }
   .p-button {
     background-color: #3bbca0;
@@ -374,19 +413,7 @@ img {
     font-size: 12px;
     align-items: center;
   }
-  .p-multiselect.ng-invalid:not(form) > div {
-    border: 1px solid #d40000;
-  }
-  .p-multiselect.ng-invalid.ng-touched.ui-inputwrapper-focus:not(form) > div {
-    box-shadow: 0 0 0 0.05em #f40000;
-    border: 1px solid #d40000;
-    border-radius: 2px;
-  }
-  .p-multiselect.ng-invalid.ng-untouched.ui-inputwrapper-focus:not(form) > div {
-    box-shadow: 0 0 0 0;
-    border: 1px solid #d40000;
-    border-radius: 2px;
-  }
+
   .p-multiselect:hover {
     box-shadow: 0 0 0 0 !important;
     border-color: #d7dce0 !important;
@@ -395,17 +422,33 @@ img {
     box-shadow: 0 0 0 0 !important;
     border-color: #d7dce0 !important;
   }
-  
+  .p-button-label {
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+    font-size: 14px;
+    border-radius: 5px;
+}
  
+}
+.p-button{
+  border-radius: 5px;
+}
+.p-button:focus{
+  box-shadow: none;
 }
 .icon-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 82%;
+  margin-left: 257px;
 }
 #topbtn {
-  margin-right: 20px;
+  margin-right: 5px;
   border-radius: 5px;
+}
+#topbtn:hover{
+  background-color: #0c9678;
 }
 
 .emplycode {
@@ -421,11 +464,11 @@ img {
   width: 100px;
 }
 #createBtn:hover {
-  background-color: white;
-  color: #3bbca0;
+  background-color:  #0c9678;
+  color: white;
   border: 1px solid #3bbca0;
 }
 #resetbtn:hover {
-  background-color: #3bbca0;
-  color: white;
+  background-color: white;
+  color: #3bbca0;
 }

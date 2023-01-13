@@ -165,7 +165,7 @@ export class SampleTaskComponent {
         
         severity: 'success',
         summary: 'Success',
-        detail: 'this.msgs',
+        detail: this.msgs,
     }); 
       
     })
