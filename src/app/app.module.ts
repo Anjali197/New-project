@@ -29,7 +29,7 @@ import {DatePipe} from '@angular/common';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
-
+import {TabViewModule} from 'primeng/tabview';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +59,7 @@ import { ToastModule } from 'primeng/toast';
     DatePipe,
     MessagesModule,
     MessageModule, ToastModule,
+    TabViewModule
 
 
 

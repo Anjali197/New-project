@@ -71,16 +71,43 @@
 
     <div class="main-container">
       <div class="menu-bar">
-        <ul>
-          <li id="profile">Profile</li>
-
-          <li class="disable">Punch Card</li>
-          <li class="disable">Quatas & Balance</li>
-          <li class="disable">Vacation Log</li>
-          <li class="disable">Pending Leaves</li>
-          <li class="disable">Projects</li>
-          <li class="disable">Documents</li>
-        </ul>
+        
+          <!-- <ul> -->
+            
+            <p-tabView>
+              <p-tabPanel header="Profile">
+                
+             </p-tabPanel>
+             <p-tabPanel header="Punch Card">
+                
+             </p-tabPanel>
+             <p-tabPanel header="Quatas & Balance">
+                
+             </p-tabPanel>
+             <p-tabPanel header="Vacation Log">
+                
+             </p-tabPanel>
+             <p-tabPanel header="Pending Leaves">
+                
+             </p-tabPanel>
+             <p-tabPanel header="Projects">
+                
+             </p-tabPanel>
+             <p-tabPanel header="Documents">
+                
+             </p-tabPanel>
+            <!-- <li id="profile">Profile</li>
+  
+            <li class="disable">Punch Card</li>
+            <li class="disable">Quatas & Balance</li>
+            <li class="disable">Vacation Log</li>
+            <li class="disable">Pending Leaves</li>
+            <li class="disable">Projects</li>
+            <li class="disable">Documents</li> -->
+          </p-tabView>
+          <!-- </ul> -->
+       
+        
       </div>
       <br />
 
@@ -126,7 +153,7 @@
               <p-dropdown
                 [options]="genderList"
                 formControlName="gender"
-                placeholder="select gender"
+                placeholder="Select Gender"
                 optionLabel="option"
               >
                 <ng-template let-country pTemplate="item">
@@ -336,7 +363,7 @@
                 <p-dropdown
                   [options]="probpList"
                   formControlName="probationPeriod"
-                  placeholder="select gender"
+                  placeholder="0"
                   optionLabel="option"
                 >
                   <ng-template let-country pTemplate="item">

@@ -166,6 +166,8 @@ img {
 }
 
 .menu-bar {
+  display: flex;
+  gap: 50px;
   ul {
     list-style: none;
     display: flex;
@@ -249,6 +251,7 @@ label{
           display: flex;
           align-items: center;
           border-radius: 3px;
+         
         }
         .p-dropdown-label {
           display: block;
@@ -258,6 +261,7 @@ label{
           width: 1%;
           text-overflow: clip;
           cursor: pointer;
+          padding-left: 5px;
         }
       }
     }
@@ -410,8 +414,9 @@ label{
   .p-multiselect {
     width: 221px;
     height: 36px;
-    font-size: 12px;
+    font-size: 14px;
     align-items: center;
+    font-family: "roboto", sans-serif;;
   }
 
   .p-multiselect:hover {
@@ -428,7 +433,30 @@ label{
     font-size: 14px;
     border-radius: 5px;
 }
- 
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+  border-color:#3bbca0;
+    color: #3bbca0;
+    font-size: 16px;
+    font-family: "Raleway", sans-serif;
+
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link{
+  border-color:#D9D9D9;
+  color: #E0E0E0;
+  font-size: 16px;
+  font-family: "Raleway", sans-serif;
+}
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus{
+  box-shadow: none;
+}
+
+.ui-tabview {
+  padding: .25em;
+  text-align: center;
+  display: flex;
+  gap: 45px;
+}
 }
 .p-button{
   border-radius: 5px;
