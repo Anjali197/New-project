@@ -30,6 +30,8 @@ import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
 import {TabViewModule} from 'primeng/tabview';
+import { SidebarComponent } from './sample-task/sidebar/sidebar.component';
+import { HeaderComponent } from './sample-task/header/header.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +43,9 @@ import {TabViewModule} from 'primeng/tabview';
     LatestProjectComponent,
     HomeComponent,
     SampleTaskComponent,
-    TestingComponent
+    TestingComponent,
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
