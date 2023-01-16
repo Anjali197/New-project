@@ -1,0 +1,43 @@
+.sidebar {
+    width: 257px;
+    height: 100%;
+   
+    background-color: white;
+    border: 0px solid #d7dce0;
+    margin-left: 25px;
+    // border-radius: 6px;
+    // padding: 10px;
+    .nmsLogo{
+        display: flex;
+        gap: 25PX;
+        margin-top: 20px;
+    }
+    .icon-texts{
+
+      display: flex;
+      flex-direction: column;
+      
+      justify-content: center;
+      .package-1{
+        display: flex;  
+      align-items: center; 
+    
+  justify-content: flex-start;
+  gap: 25px;
+ 
+}
+  .icons{
+    width: 24px;
+   
+  }
+  h4{
+    font-size: 16px;
+    font-weight: 700;
+    font-family:"Raleway", sans-serif;
+    color: #808080;
+  }
+    
+
+    }
+ 
+  }

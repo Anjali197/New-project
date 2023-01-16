@@ -1,6 +1,6 @@
 <!-- <div class="mainContainer"> -->
-  <!-- <div class="sidebar-teamcontainer"> -->
-  <!-- <div class="sidebar">
+<!-- <div class="sidebar-teamcontainer"> -->
+<!-- <div class="sidebar">
       <p>NINTRIVA</p>
       <div class="icon-texts">
         <div class="package-1">
@@ -47,7 +47,15 @@
       </div>
       
     </div> -->
+<div class="maincontainer">
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
   <div class="team-container">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    
     <!-- <div class="team-image">
         <h1>Team</h1>
         <img   id="userimg" src="/assets/images/nms.svg" alt="" />
@@ -71,32 +79,17 @@
 
     <div class="main-container">
       <div class="menu-bar">
-        
-          <!-- <ul> -->
-            
-            <p-tabView>
-              <p-tabPanel header="Profile">
-                
-             </p-tabPanel>
-             <p-tabPanel header="Punch Card">
-                
-             </p-tabPanel>
-             <p-tabPanel header="Quatas & Balance">
-                
-             </p-tabPanel>
-             <p-tabPanel header="Vacation Log">
-                
-             </p-tabPanel>
-             <p-tabPanel header="Pending Leaves">
-                
-             </p-tabPanel>
-             <p-tabPanel header="Projects">
-                
-             </p-tabPanel>
-             <p-tabPanel header="Documents">
-                
-             </p-tabPanel>
-            <!-- <li id="profile">Profile</li>
+        <!-- <ul> -->
+
+        <p-tabView>
+          <p-tabPanel header="Profile"> </p-tabPanel>
+          <p-tabPanel header="Punch Card"> </p-tabPanel>
+          <p-tabPanel header="Quotas & Balance"> </p-tabPanel>
+          <p-tabPanel header="Vacation Log"> </p-tabPanel>
+          <p-tabPanel header="Pending Leaves"> </p-tabPanel>
+          <p-tabPanel header="Projects"> </p-tabPanel>
+          <p-tabPanel header="Documents"> </p-tabPanel>
+          <!-- <li id="profile">Profile</li>
   
             <li class="disable">Punch Card</li>
             <li class="disable">Quatas & Balance</li>
@@ -104,10 +97,8 @@
             <li class="disable">Pending Leaves</li>
             <li class="disable">Projects</li>
             <li class="disable">Documents</li> -->
-          </p-tabView>
-          <!-- </ul> -->
-       
-        
+        </p-tabView>
+        <!-- </ul> -->
       </div>
       <br />
 
@@ -146,7 +137,7 @@
                 class="calender"
               ></p-calendar>
 
-              <br />
+              
             </div>
             <div class="item4 top-label">
               <label for="gender">Gender</label>
@@ -208,7 +199,7 @@
                 class="calender"
               ></p-calendar>
 
-              <br />
+              
             </div>
             <div class="item8 top-label">
               <label for="gender">Employee Code*</label>
@@ -229,7 +220,7 @@
                 <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
                 <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
 
-                <input type="text" id="textbx" [value]="code" /> <br />
+                <input type="text" id="textbx" [value]="code" /> 
               </div>
             </div>
 
@@ -238,7 +229,7 @@
             <div class="item9 top-label">
               <label for="gender">Employee Address</label>
               <textarea
-                [rows]="9"
+                [rows]="7"
                 [cols]="25"
                 pInputTextarea
                 [autoResize]="true"
@@ -459,5 +450,5 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
+</div>
 <!-- </div> -->

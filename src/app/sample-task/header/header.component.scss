@@ -1,0 +1,19 @@
+.header{
+    .team-image{
+        display: flex;
+        justify-content: space-between;
+        // margin-left: 257px;
+    }
+    h1{
+        font-family: "Raleway", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  
+    }
+    .line {
+        width: 1132px;
+        height: 1px;
+        background: #cdcdcd;
+      }
+}
