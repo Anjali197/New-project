@@ -32,6 +32,7 @@ import { ToastModule } from 'primeng/toast';
 import {TabViewModule} from 'primeng/tabview';
 import { SidebarComponent } from './sample-task/sidebar/sidebar.component';
 import { HeaderComponent } from './sample-task/header/header.component';
+import {InputNumberModule} from 'primeng/inputnumber';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,7 @@ import { HeaderComponent } from './sample-task/header/header.component';
     DatePipe,
     MessagesModule,
     MessageModule, ToastModule,
-    TabViewModule
+    TabViewModule,InputNumberModule
 
 
 

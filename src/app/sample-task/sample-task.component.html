@@ -112,7 +112,7 @@
             <!-- <div class="flex1"> -->
             <div class="item1 top-label">
               <label for="fname">First Name*</label>
-              <input type="text" pInputText formControlName="firstName" />
+              <input type="text" pInputText formControlName="firstName"  />
               <div
                 *ngIf="firstName?.invalid && firstName?.touched"
                 class="error-msg"
@@ -174,7 +174,9 @@
             </div>
             <div class="item6 top-label">
               <label for="phone">Mobile*</label>
-              <input type="text" pInputText formControlName="phoneNumber" />
+              <p-inputNumber  inputId="withoutgrouping" [useGrouping]="false"  formControlName="phoneNumber">
+              </p-inputNumber >
+              <!-- <input type="nu" pInputText formControlName="phoneNumber" /> -->
 
               <div
                 *ngIf="!phoneNumber?.value && phoneNumber?.touched"
@@ -184,8 +186,8 @@
               </div>
               <div
                 *ngIf="
-                  signupForm.get('phoneNumber')?.hasError('minlength') &&
-                  signupForm.get('phoneNumber')?.touched
+                  signupForm.get('phoneNumber.value')?.hasError('minlength') &&
+                  signupForm.get('phoneNumber.value')?.touched
                 "
                 class="error-msg"
               >
