@@ -26,8 +26,7 @@ hr {
 .maincontainer {
   display: flex;
   gap: 27px;
-  background-color:
-  #FAFAFA; ;
+  background-color: #fafafa;
   // align-items: center;
   // background: #D2D2D2;
 }
@@ -158,6 +157,7 @@ img {
 .menu-bar {
   display: flex;
   gap: 50px;
+
   ul {
     list-style: none;
     display: flex;
@@ -285,6 +285,12 @@ label {
       }
     }
   }
+  .item1{
+    .name{
+      text-transform: none;
+      
+    }
+  }
   #btn {
     width: 87px;
     height: 36px;
@@ -307,8 +313,9 @@ label {
   .p-inputtext {
     font-size: 12px;
     border-radius: 3px;
-    text-transform: capitalize;
+    // text-transform: capitalize;
   }
+ 
   .p-dropdown {
     transition: none;
   }
@@ -355,7 +362,9 @@ label {
     background-color: #d7dce0;
     border-color: #3bbca0;
   }
-
+  //   .p-tabview-nav-container {
+  //     margin: 0px 28px;
+  // }
   .p-dropdown {
     width: 221px;
     height: 35px;
@@ -382,18 +391,18 @@ label {
     font-family: "roboto", sans-serif;
     padding-left: 5px;
   }
-  .p-datepicker table td.p-datepicker-today > span{
+  .p-datepicker table td.p-datepicker-today > span {
     color: white;
     background-color: #3bbca0;
   }
-  .p-datepicker table td > span.p-highlight{
+  .p-datepicker table td > span.p-highlight {
     color: white;
     background-color: #3bbca0;
   }
   .p-datepicker table td.p-datepicker-today > span.p-highlight {
     color: white;
-    background:#3bbca0;
-}
+    background: #3bbca0;
+  }
   .p-button {
     background-color: #3bbca0;
     border: 0;
@@ -451,11 +460,17 @@ label {
   .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
     box-shadow: none;
   }
-  .p-tabview .p-tabview-panels{
+  .p-tabview .p-tabview-panels {
     padding: 0px;
   }
-
-
+  .p-tabview-nav-content {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overscroll-behavior: contain auto;
+    margin: 0px 28px;
+  }
   .ui-tabview {
     padding: 0.25em;
     text-align: center;
