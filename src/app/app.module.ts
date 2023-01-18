@@ -33,6 +33,8 @@ import {TabViewModule} from 'primeng/tabview';
 import { SidebarComponent } from './sample-task/sidebar/sidebar.component';
 import { HeaderComponent } from './sample-task/header/header.component';
 import {InputNumberModule} from 'primeng/inputnumber';
+import { TitleCasePipe } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +66,7 @@ import {InputNumberModule} from 'primeng/inputnumber';
     DatePipe,
     MessagesModule,
     MessageModule, ToastModule,
-    TabViewModule,InputNumberModule
+    TabViewModule,InputNumberModule, TitleCasePipe
 
 
 

@@ -110,14 +110,14 @@ export class SampleTaskComponent {
     dailyWorkHours: new FormControl(''),
     weeklyWorkHours: new FormControl(''),
     aadharNumber: new FormControl('', [
-      Validators.required,
+  
       Validators.minLength(13),
     ]),
     panCard: new FormControl('', [
-      Validators.required,
+      
       Validators.minLength(10),
     ]),
-    employeeCode: new FormControl(''),
+    employeeCode: new FormControl('',[Validators.required]),
   });
  
   get firstName() {
@@ -153,22 +153,27 @@ export class SampleTaskComponent {
   }
 
   signUser(item: any) {
-    this.signInService.signIn(item,this.neList).subscribe((response)=>{
-      console.log('results', response);
-      console.log('message',response.message);
-      this.msgs =response.message
-      console.log(this.msgs);
+    
+    if(this.signupForm.valid){
 
-
-
-      this.messageService.add({
+      this.signInService.signIn(item,this.neList).subscribe((response)=>{
+        console.log('results', response);
+        console.log('message',response.message);
+        this.msgs =response.message
+        console.log(this.msgs);
+  
+  
+  
+        this.messageService.add({
+          
+          severity: 'success',
+          summary: 'Success',
+          detail: this.msgs,
+      }); 
         
-        severity: 'success',
-        summary: 'Success',
-        detail: this.msgs,
-    }); 
-      
-    })
+      })
+    }
+    
     console.log('signupForm', item);
   }
   validateForm() {
