@@ -17,42 +17,72 @@ export class SampleTaskService {
       phoneNumber: data.phoneNumber,
       joiningDate: this.getFormatedDate(data.joiningDate),
       dateOfBirth: this.getFormatedDate(data.dateOfBirth),
-      dailyWorkHours: data.dailyWorkHours,
-      weeklyWorkHours: data.weeklyWorkHours,
-      employeeAddress: data.employeeAddress,
+      dailyWorkHours: this.validateField(data.dailyWorkHours),
+      weeklyWorkHours: this.validateField(data.weeklyWorkHours),
+      employeeAddress: this.getFormatedDate(data.employeeAddress),
       aadhaarNumber: data.aadhaarNumber,
       panNumber: data.panNumber,
 
-      buddy: {
-        id: data.buddy.id,
-      },
+      buddy: this.getBuddy(data.buddy),
       options: this.getFormatedOptions(data),
 
-      projects: data.projects,
+      projects: this.validateField(data.projects),
     };
     return this.httpClient.post<any>(this.url, formatedData);
   }
 
   getFormatedOptions(data: any) {
     let options = [];
-    options.push(data.department);
-    options.push(data.designation);
-    options.push(data.gender);
-    options.push(data.probationStatus);
-    options.push(data.probationPeriod);
-    options.push(data.manager);
-    options.push(data.workStatus);
-    options.push(data.employeeType);
+    if (data.department) {
+      options.push(data.department);
+    }
+    if (data.designation) {
+      options.push(data.designation);
+    }
+    if (data.gender) {
+      options.push(data.gender);
+    }
+    if (data.probationStatus) {
+      options.push(data.probationStatus);
+    }
+    if (data.probationPeriod) {
+      options.push(data.probationPeriod);
+    }
+    if (data.manager) {
+      options.push(data.manager);
+    }
+    if (data.workStatus) {
+      options.push(data.workStatus);
+    }
+    if (data.employeeType) {
+      options.push(data.employeeType);
+    }
     return options;
   }
 
   getFormatedDate(date: string) {
-    const newDate = new Date(date)
-      .toLocaleDateString()
-      .split('/')
-      .reverse()
-      .join('/');
+    if (date) {
+      const newDate = new Date(date)
+        .toLocaleDateString()
+        .split('/')
+        .reverse()
+        .join('/');
 
-    return newDate;
+      return newDate;
+    }
+    return;
+  }
+  validateField(data: string | {}) {
+    if (data) {
+      return data;
+    }
+    return;
+  }
+
+  getBuddy(buddy: any) {
+    if (buddy) {
+      return { id: buddy.id };
+    }
+    return;
   }
 }

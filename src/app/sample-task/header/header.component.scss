@@ -3,6 +3,7 @@
         display: flex;
         justify-content: space-between;
         // margin-left: 257px;
+        margin-right: 27px;
     }
     h1{
         font-family: "Raleway", sans-serif;
@@ -12,8 +13,9 @@
   
     }
     .line {
-        width: 1132px;
+        width:1265px;
         height: 1px;
         background: #cdcdcd;
+        margin-left: -25px;
       }
 }
