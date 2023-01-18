@@ -27,8 +27,22 @@ hr {
   display: flex;
   gap: 27px;
   background-color: #fafafa;
+  width: 100%;
   // align-items: center;
   // background: #D2D2D2;
+  .team-container {
+    // width: 1132px;
+    // height: 1080px;
+    height: 100vh;
+    width: calc(100% - 257px);
+    // margin-left: 257px;
+    .line {
+      width: 1300px;
+      height: 1px;
+      background: #cdcdcd;
+    }
+  }
+
 }
 
 
@@ -56,19 +70,7 @@ hr {
   //     }
   //   }
   // }
-  .team-container {
-    // width: 1132px;
-    // height: 1080px;
-    height: 100vh;
-    width: calc(100% - 257px);
-    // margin-left: 257px;
-    .line {
-      width: 1300px;
-      height: 1px;
-      background: #cdcdcd;
-    }
-  }
-
+  
 
 .main-container {
   // display: flex;
@@ -100,6 +102,7 @@ hr {
   font-weight: 100;
   color: red;
   font-size: 10px;
+  font-family: "roboto", sans-serif;
 }
 .team-image {
   display: flex;
@@ -151,20 +154,7 @@ img {
   display: flex;
   gap: 50px;
 
-  ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    font-family: "Raleway", sans-serif;
-    color: #efefef;
-    font-weight: 700;
-    border-bottom: 1.5px solid #d7dce0;
-    align-items: center;
-    width: max-content;
-    gap: 55px;
-    padding-right: 25px;
-    margin-left: 31px;
-  }
+ 
 }
 
 #profile {
@@ -274,6 +264,7 @@ label {
           display: inline-block;
           text-overflow: ellipsis;
           white-space: nowrap;
+
         }
       }
     }
@@ -421,6 +412,7 @@ label {
     font-size: 14px;
     align-items: center;
     font-family: "roboto", sans-serif;
+    border-radius: 3px;
   }
 
   .p-multiselect:hover {

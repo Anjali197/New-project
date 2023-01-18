@@ -1,52 +1,4 @@
-<!-- <div class="mainContainer"> -->
-<!-- <div class="sidebar-teamcontainer"> -->
-<!-- <div class="sidebar">
-      <p>NINTRIVA</p>
-      <div class="icon-texts">
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        <div class="package-1">
-          <img src="/assets/images/Vector.svg" class="icons" alt="">
-        <h4>Dashboard</h4>
-        </div>
-        
-      </div>
-      
-    </div> -->
+
 <div class="maincontainer">
   <div class="sidebar">
     <app-sidebar></app-sidebar>
@@ -56,14 +8,7 @@
       <app-header></app-header>
     </div>
     
-    <!-- <div class="team-image">
-        <h1>Team</h1>
-        <img   id="userimg" src="/assets/images/nms.svg" alt="" />
-      </div> -->
-
-    <!-- <div class="line">
-
-      </div><br> -->
+    
     <div class="icon-btn">
       <div class="icon-text">
         <img src="/assets/images/Profile avatar.svg" alt="" />
@@ -79,7 +24,7 @@
 
     <div class="main-container">
       <div class="menu-bar">
-        <!-- <ul> -->
+      
 
         <p-tabView>
           <p-tabPanel header="Profile"> </p-tabPanel>
@@ -89,16 +34,9 @@
           <p-tabPanel header="Pending Leaves"> </p-tabPanel>
           <p-tabPanel header="Projects"> </p-tabPanel>
           <p-tabPanel header="Documents"> </p-tabPanel>
-          <!-- <li id="profile">Profile</li>
-  
-            <li class="disable">Punch Card</li>
-            <li class="disable">Quatas & Balance</li>
-            <li class="disable">Vacation Log</li>
-            <li class="disable">Pending Leaves</li>
-            <li class="disable">Projects</li>
-            <li class="disable">Documents</li> -->
+          
         </p-tabView>
-        <!-- </ul> -->
+        
       </div>
       <br />
 
@@ -109,7 +47,7 @@
       <div class="form">
         <form [formGroup]="signupForm" (ngSubmit)="signUser(signupForm.value)">
           <div class="sign-container">
-            <!-- <div class="flex1"> -->
+          
             <div class="item1 top-label">
               <label for="fname">First Name*</label>
               <input type="text" pInputText formControlName="firstName"  [value]="firstName?.value | titlecase"/>
@@ -147,18 +85,17 @@
                 placeholder="Select Gender"
                 optionLabel="option"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-gender pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option }}</div>
+                    <div>{{ gender.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
 
-            <!-- <div class="flex1"> -->
             <div class="item5 top-label">
-              <label for="phone">Email*</label>
-              <input type="email" pInputText formControlName="email"  />
+              <label for="email">Email*</label>
+              <input type="text" pInputText formControlName="email"  />
               <div
                 *ngIf="email?.value == '' && email?.touched"
                 class="error-msg"
@@ -176,7 +113,7 @@
               <label for="phone">Mobile*</label>
               <!-- <p-inputNumber  inputId="withoutgrouping" [useGrouping]="false"  >
               </p-inputNumber > -->
-              <input type="nu" pInputText formControlName="phoneNumber" />
+              <input type="tel" pInputText formControlName="phoneNumber" />
               <!-- <div *ngIf="!phoneNumber?.value && phoneNumber?.hasError('pattern')">
                 Please enter a valid phone number.
           </div> -->
@@ -200,7 +137,7 @@
               
             </div>
             <div class="item7 top-label">
-              <label for="dob">Joining Date</label>
+              <label for="joiningDate">Joining Date</label>
               <p-calendar
                 formControlName="joiningDate"
                 class="calender"
@@ -209,7 +146,7 @@
               
             </div>
             <div class="item8 top-label">
-              <label for="gender">Employee Code*</label>
+              <label for="empCode">Employee Code*</label>
               <div class="emplycode">
                 <p-dropdown
                   [options]="empcodeLiist"
@@ -224,17 +161,14 @@
                     </div>
                   </ng-template>
                 </p-dropdown>
-                <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
-                <!-- <p-dropdown [options]="gender" formControlName="selectedCity" placeholder="NE/NT" id="itm8"> -->
-
+                
                 <input type="text" id="textbx" [value]="code" /> 
               </div>
             </div>
 
-            <!-- </div> -->
-            <!-- <div class="flex1"> -->
+           
             <div class="item9 top-label">
-              <label for="gender">Employee Address</label>
+              <label for="empAddrss">Employee Address</label>
               <textarea
                 [rows]="7"
                 [cols]="25"
@@ -245,7 +179,7 @@
             </div>
 
             <div class="item10 top-label">
-              <label for="gender">Employee Type</label>
+              <label for="emotyp">Employee Type</label>
               <p-dropdown
                 [options]="employeeType"
                 formControlName="employeeType"
@@ -260,40 +194,40 @@
               </p-dropdown>
             </div>
             <div class="item11 top-label">
-              <label for="gender">Designation</label>
+              <label for="desgnatn">Designation</label>
               <p-dropdown
                 [options]="designations"
                 formControlName="designation"
                 placeholder="Select Designation"
                 optionLabel="option"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-designation pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option }}</div>
+                    <div>{{ designation.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
             <div class="item12 top-label">
-              <label for="gender">Department</label>
+              <label for="dept">Department*</label>
               <p-dropdown
                 [options]="departments"
                 formControlName="department"
                 placeholder="Select Department"
                 optionLabel="option"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-department pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option }}</div>
+                    <div>{{ department.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
 
-            <!-- <div class="flex4"> -->
+            
             <div class="item13 top-label">
               <div class="projects top-label">
-                <label for="gender">Project</label>
+                <label for="project">Project</label>
                 <p-multiSelect
                   [options]="projectList"
                   display="chip"
@@ -301,62 +235,62 @@
                   placeholder="Project"
                   formControlName="projects"
                 >
-                  <ng-template let-country pTemplate="item">
+                  <ng-template let-Project pTemplate="item">
                     <div class="country-item">
-                      <div>{{ country.option }}</div>
+                      <div>{{ Project.option }}</div>
                     </div>
                   </ng-template>
                 </p-multiSelect>
               </div>
             </div>
             <div class="item14 top-label">
-              <label for="gender">Buddy</label>
+              <label for="buddy">Buddy</label>
               <p-dropdown
                 [options]="buddyList"
                 formControlName="buddy"
                 placeholder="Select Buddy"
                 optionLabel="name"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-buddy pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.name }}</div>
+                    <div>{{ buddy.name }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
             <div class="item15 top-label">
-              <label for="gender">Manager</label>
+              <label for="manager">Manager</label>
               <p-dropdown
                 [options]="managerList"
                 formControlName="manager"
                 placeholder="Select Manager"
                 optionLabel="option"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-manager pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option }}</div>
+                    <div>{{ manager.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
 
             <div class="item16 top-label">
-              <label for="gender">Probation Status</label>
+              <label for="probationStatus">Probation Status</label>
               <p-dropdown
                 [options]="probList"
                 formControlName="probationStatus"
                 placeholder="Select Status"
                 optionLabel="option"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-probationStatus pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option }}</div>
+                    <div>{{ probationStatus.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
             <div class="item17 top-label">
-              <label for="gender">Probation Period</label>
+              <label for="probationPeriod">Probation Period</label>
               <div class="probper-month">
                 <p-dropdown
                   [options]="probpList"
@@ -364,9 +298,9 @@
                   placeholder="0"
                   optionLabel="option"
                 >
-                  <ng-template let-country pTemplate="item">
+                  <ng-template let-probationPeriod pTemplate="item">
                     <div class="country-item">
-                      <div>{{ country.option }}</div>
+                      <div>{{ probationPeriod.option }}</div>
                     </div>
                   </ng-template>
                 </p-dropdown>
@@ -374,36 +308,36 @@
               </div>
             </div>
             <div class="item18 top-label">
-              <label for="gender">Work Status</label>
+              <label for="workStatus">Work Status</label>
               <p-dropdown
                 [options]="workList"
                 formControlName="workStatus"
                 placeholder="Select Work Status"
                 optionLabel="option"
               >
-                <ng-template let-country pTemplate="item">
+                <ng-template let-workStatus pTemplate="item">
                   <div class="country-item">
-                    <div>{{ country.option }}</div>
+                    <div>{{ workStatus.option }}</div>
                   </div>
                 </ng-template>
               </p-dropdown>
             </div>
             <div class="item19 top-label">
-              <label for="gender">Salary</label>
+              <label for="Salary">Salary</label>
               <input type="text" pInputText formControlName="salary" />
             </div>
             <div class="item20 top-label">
-              <label for="fname">Daily Work Hours</label>
+              <label for="dailywrkHrs">Daily Work Hours</label>
               <input type="text" pInputText formControlName="dailyWorkHours" />
               <br />
             </div>
             <div class="item21 top-label">
-              <label for="fname">Weekly Work Hours</label>
+              <label for="weeklyWrkHrs">Weekly Work Hours</label>
               <input type="text" pInputText formControlName="weeklyWorkHours" />
               <br />
             </div>
             <div class="item22 top-label">
-              <label for="fname">Pan Number</label>
+              <label for="panNo">Pan Number</label>
               <input type="text" pInputText formControlName="panCard" />
               <div
                 *ngIf="
@@ -416,7 +350,7 @@
               </div>
             </div>
             <div class="item23 top-label">
-              <label for="fname">Adhar Number</label>
+              <label for="adharNo">Adhar Number</label>
               <input type="text" pInputText formControlName="aadharNumber" />
               <br />
               <div
@@ -458,4 +392,4 @@
     </div>
   </div>
 </div>
-<!-- </div> -->
+

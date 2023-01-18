@@ -139,7 +139,7 @@ export class SampleTaskComponent {
     return this.signupForm.get('panCard');
   }
   onSubmit() {
-    if (this.signupForm.valid) {
+    if (this.signupForm.dirty ||this.signupForm.invalid ) {
       this.signupForm.reset();
     }
   }
@@ -194,7 +194,7 @@ export class SampleTaskComponent {
     // alert(this.message);
   }
   
-
+  
 
   
 }

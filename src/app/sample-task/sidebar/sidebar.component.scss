@@ -26,7 +26,7 @@
   justify-content: flex-start;
   gap: 25px;
   margin-top: -5px;
- 
+  
 }
   .icons{
     width: 24px;
@@ -38,8 +38,16 @@
     font-family:"Raleway", sans-serif;
     color: #808080;
   }
+
     
 
     }
+    .package-1:hover {
+      height: 50px;
+      background-image: linear-gradient(to left, rgba(255,0,0,0), #3bbca0);
+      cursor: pointer;
+      
+    }
+   
  
   }
