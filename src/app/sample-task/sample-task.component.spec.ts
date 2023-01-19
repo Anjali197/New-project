@@ -5,7 +5,7 @@ import { By } from '@angular/platform-browser';
 import { SampleTaskComponent } from './sample-task.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
-import { TabPanel, TabView } from 'primeng/tabview';
+import { TabPanel, TabView, TabViewModule } from 'primeng/tabview';
 import { Calendar } from 'primeng/calendar';
 import { Dropdown } from 'primeng/dropdown';
 import { MultiSelect } from 'primeng/multiselect';
@@ -13,6 +13,7 @@ import { Toast } from 'primeng/toast';
 import { Overlay } from 'primeng/overlay';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { InputTextareaModule } from 'primeng/inputtextarea';
+import { Tooltip, TooltipModule } from 'primeng/tooltip';
 
 describe('SampleTaskComponent', () => {
   let component: SampleTaskComponent;
@@ -20,8 +21,8 @@ describe('SampleTaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule,HttpClientModule,ReactiveFormsModule,InputTextareaModule],
-      declarations: [ SampleTaskComponent, SidebarComponent  ,HeaderComponent, TabView ,TabPanel,Calendar,Dropdown,MultiSelect,Toast,Overlay,]
+      imports: [HttpClientTestingModule,HttpClientModule,ReactiveFormsModule,InputTextareaModule,TabViewModule,TooltipModule],
+      declarations: [ SampleTaskComponent, SidebarComponent  ,HeaderComponent, TabView ,TabPanel,Calendar,Dropdown,MultiSelect,Toast,Overlay,Tooltip]
     })
     .compileComponents();
 
