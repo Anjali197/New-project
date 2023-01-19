@@ -4,13 +4,13 @@
    
     background-color: white;
     border: 0px solid #d7dce0;
-   padding-left: 20px;
-   padding-top: 20px;
+   padding-left: 30px;
+   padding-top: 30px;
     // border-radius: 6px;
     // padding: 10px;
     .nmsLogo{
         display: flex;
-        gap: 25PX;
+        gap: 30px;
         margin-top: 20px;
     }
     .icon-texts{
@@ -24,16 +24,16 @@
       align-items: center; 
     
   justify-content: flex-start;
-  gap: 25px;
+  gap: 30px;
   margin-top: -5px;
   
 }
   .icons{
-    width: 24px;
+    width: 20px;
    
   }
   h4{
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     font-family:"Raleway", sans-serif;
     color: #808080;
@@ -42,9 +42,10 @@
     
 
     }
-    .package-1:hover {
+    .team{
       height: 50px;
-      background-image: linear-gradient(to left, rgba(255,0,0,0), #3bbca0);
+      // padding-left: 5px;
+      background-image: linear-gradient(to left, rgba(255,0,0,0), #bceee3);
       cursor: pointer;
       
     }

@@ -4,7 +4,7 @@ import { ApiCallService } from '../api-call.service';
 import { genderTest } from '../main/home/api.type';
 import { SampleTaskService } from './sample-task.service';
 import { MessageService } from 'primeng/api';
-// type Gender = { name: string };
+
 @Component({
   selector: 'app-sample-task',
   templateUrl: './sample-task.component.html',
@@ -29,14 +29,14 @@ export class SampleTaskComponent {
 
   msgs: any;
   constructor(private getApi: ApiCallService, private signInService:SampleTaskService , private messageService: MessageService,) {
-    // this.gender = [{ name: 'male' }, { name: 'female' }];
+   
   }
   ngOnInit(): void {
     this.getApi.gender().subscribe((res) => {
       console.log('res', res);
       this.genderList = res;
 
-      // this.genderList = ['male', 'female', 'others'];
+      
     });
     this.getApi.emplytype().subscribe((respo) => {
       console.log('type', respo);
@@ -79,10 +79,7 @@ export class SampleTaskComponent {
       console.log('buddy', resspo);
       this.buddyList = resspo;
     });
-    // this.getApi.neOrNt().subscribe((ressppo)=>{
-    //   console.log('ne',ressppo);
-    //   this.neList=ressppo;
-    // })
+    
   }
 
   signupForm = new FormGroup({
@@ -191,7 +188,6 @@ export class SampleTaskComponent {
       
     
     
-    // alert(this.message);
   }
   
   
