@@ -12,6 +12,7 @@ import { MultiSelect } from 'primeng/multiselect';
 import { Toast } from 'primeng/toast';
 import { Overlay } from 'primeng/overlay';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 describe('SampleTaskComponent', () => {
   let component: SampleTaskComponent;
@@ -19,7 +20,7 @@ describe('SampleTaskComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule,HttpClientModule,ReactiveFormsModule,],
+      imports: [HttpClientTestingModule,HttpClientModule,ReactiveFormsModule,InputTextareaModule],
       declarations: [ SampleTaskComponent, SidebarComponent  ,HeaderComponent, TabView ,TabPanel,Calendar,Dropdown,MultiSelect,Toast,Overlay,]
     })
     .compileComponents();
