@@ -26,17 +26,16 @@ export class SampleTaskComponent {
   neList!: any;
   code: any = '';
 
-
   msgs: any;
-  constructor(private getApi: ApiCallService, private signInService:SampleTaskService , private messageService: MessageService,) {
-   
-  }
+  constructor(
+    private getApi: ApiCallService,
+    private signInService: SampleTaskService,
+    private messageService: MessageService
+  ) {}
   ngOnInit(): void {
     this.getApi.gender().subscribe((res) => {
       console.log('res', res);
       this.genderList = res;
-
-      
     });
     this.getApi.emplytype().subscribe((respo) => {
       console.log('type', respo);
@@ -79,7 +78,6 @@ export class SampleTaskComponent {
       console.log('buddy', resspo);
       this.buddyList = resspo;
     });
-    
   }
 
   signupForm = new FormGroup({
@@ -106,17 +104,11 @@ export class SampleTaskComponent {
     salary: new FormControl(''),
     dailyWorkHours: new FormControl(''),
     weeklyWorkHours: new FormControl(''),
-    aadharNumber: new FormControl('', [
-  
-      Validators.minLength(13),
-    ]),
-    panCard: new FormControl('', [
-      
-      Validators.minLength(10),
-    ]),
-    employeeCode: new FormControl('',[Validators.required]),
+    aadharNumber: new FormControl('', [Validators.minLength(13)]),
+    panCard: new FormControl('', [Validators.minLength(10)]),
+    employeeCode: new FormControl('', [Validators.required]),
   });
- 
+
   get firstName() {
     return this.signupForm.get('firstName');
   }
@@ -136,7 +128,7 @@ export class SampleTaskComponent {
     return this.signupForm.get('panCard');
   }
   onSubmit() {
-    if (this.signupForm.dirty ||this.signupForm.invalid ) {
+    if (this.signupForm.dirty || this.signupForm.invalid) {
       this.signupForm.reset();
     }
   }
@@ -150,27 +142,21 @@ export class SampleTaskComponent {
   }
 
   signUser(item: any) {
-    
-    if(this.signupForm.valid){
-
-      this.signInService.signIn(item,this.neList).subscribe((response)=>{
+    if (this.signupForm.valid) {
+      this.signInService.signIn(item, this.neList).subscribe((response) => {
         console.log('results', response);
-        console.log('message',response.message);
-        this.msgs =response.message
+        console.log('message', response.message);
+        this.msgs = response.message;
         console.log(this.msgs);
-  
-  
-  
+
         this.messageService.add({
-          
           severity: 'success',
           summary: 'Success',
           detail: this.msgs,
-      }); 
-        
-      })
+        });
+      });
     }
-    
+
     console.log('signupForm', item);
   }
   validateForm() {
@@ -182,15 +168,9 @@ export class SampleTaskComponent {
       this.aadharNumber?.markAsTouched();
       this.panCard?.markAsTouched();
     }
-    
-      
-    
-      
-    
-    
   }
-  
-  
 
-  
+  test(){
+    return "hii";
+  }
 }
