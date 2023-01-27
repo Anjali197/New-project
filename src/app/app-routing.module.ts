@@ -6,9 +6,10 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { sample } from 'rxjs';
 import { SampleTaskComponent } from './sample-task/sample-task.component';
 import { TestingComponent } from './testing/testing.component';
-
+import { PopupComponent } from './sample-task/popup/popup.component';
 const routes: Routes = [
   {path:'sample', component:SampleTaskComponent},
+  {path:'popup', component:PopupComponent},
   {path:'testing',component:TestingComponent},
   {path:'sign-up', component:SignUpComponent},
   {path:'login',component:LoginComponent},

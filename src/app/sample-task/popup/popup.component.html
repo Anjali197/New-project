@@ -1,0 +1,82 @@
+<div class="mainContainer">
+    <div class="messageBox">
+      <div class="heading-closeIcon">
+        <p>Create Client</p>
+        <button pButton pRipple type="button" icon="pi pi-times" ></button>
+      </div>
+        
+        <div class="form">
+            <form [formGroup]="signupForm" (ngSubmit)="signUser(signupForm.value)" >
+                <div class="inputBoxes">
+
+                 <div class="item1 ">
+              <label for="fname">First Name*</label>
+              <input type="text" pInputText formControlName="firstName" [value]="firstName?.value| titlecase ">
+              <div
+              *ngIf="firstName?.invalid && firstName?.touched"
+              class="error-msg"
+            >
+              First Name is required
+            </div>
+              
+            </div>
+            <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <input type="text" pInputText formControlName="firstName" >
+                <div
+              *ngIf="firstName?.invalid && firstName?.touched"
+              class="error-msg"
+            >
+              First Name is required
+            </div>
+                
+              </div>
+              <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <input type="text" pInputText formControlName="firstName" >
+                
+              </div>
+              <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <input type="text" pInputText formControlName="firstName" >
+                
+              </div>
+              <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <p-inputNumber  mode="decimal" inputId="withoutgrouping" [useGrouping]="false">
+                </p-inputNumber>
+                
+              </div>
+              <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <input type="text" pInputText formControlName="firstName" >
+              </div>
+              <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <input type="text" pInputText formControlName="firstName" >
+              </div>
+              <div class="item1 ">
+                <label for="fname">First Name*</label>
+                <input type="text" pInputText formControlName="firstName" >
+              </div>
+              <div class="item9 ">
+                <label for="empAddrss">Employee Address</label>
+                <textarea
+                  [rows]="7"
+                  [cols]="25"
+                  pInputTextarea
+                  [autoResize]="true"
+                  formControlName="employeeAddress"
+                ></textarea>
+              </div>
+  
+              
+              
+              
+                </div>
+            </form>
+           
+        </div>
+        
+    </div>
+</div>
