@@ -20,7 +20,7 @@ export class ApiCallService {
   }
   genderUrl = 'http://164.52.200.24:6204/options/get-options/Gender';
   gender() {
-    return this.http.get<genderTest>(this.genderUrl);
+    return this.http.get<any>(this.genderUrl);
   }
   emplotypeurl =
     'http://164.52.200.24:6204/options/get-options/Employment Type';

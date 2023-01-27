@@ -170,7 +170,5 @@ export class SampleTaskComponent {
     }
   }
 
-  test(){
-    return "hii";
-  }
+  
 }
