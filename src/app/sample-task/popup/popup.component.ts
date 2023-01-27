@@ -12,12 +12,16 @@ export class PopupComponent {
   ngOnInit(): void {}
 
   signupForm = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
+    clientName: new FormControl('', [Validators.required]),
+    contactName: new FormControl('', [Validators.required])
     
     
   });
-  get firstName() {
-    return this.signupForm.get('firstName');
+  get clientName() {
+    return this.signupForm.get('clientName');
+  }
+  get contactName() {
+    return this.signupForm.get('contactName');
   }
   signUser(item: any) {}
 

@@ -10,10 +10,10 @@
                 <div class="inputBoxes">
 
                  <div class="item1 ">
-              <label for="fname">First Name*</label>
-              <input type="text" pInputText formControlName="firstName" [value]="firstName?.value| titlecase ">
+              <label for="fname">Client Name*</label>
+              <input type="text" pInputText formControlName="clientName" [value]="clientName?.value| titlecase ">
               <div
-              *ngIf="firstName?.invalid && firstName?.touched"
+              *ngIf="clientName?.invalid && clientName?.touched"
               class="error-msg"
             >
               First Name is required
@@ -21,10 +21,10 @@
               
             </div>
             <div class="item1 ">
-                <label for="fname">First Name*</label>
-                <input type="text" pInputText formControlName="firstName" >
+                <label for="fname">Contact Person*</label>
+                <input type="text" pInputText formControlName="contactName" >
                 <div
-              *ngIf="firstName?.invalid && firstName?.touched"
+              *ngIf="contactName?.invalid && contactName?.touched"
               class="error-msg"
             >
               First Name is required
@@ -32,43 +32,48 @@
                 
               </div>
               <div class="item1 ">
-                <label for="fname">First Name*</label>
+                <label for="fname">Designation*</label>
                 <input type="text" pInputText formControlName="firstName" >
                 
               </div>
               <div class="item1 ">
-                <label for="fname">First Name*</label>
+                <label for="fname">E-mail*</label>
                 <input type="text" pInputText formControlName="firstName" >
                 
               </div>
               <div class="item1 ">
-                <label for="fname">First Name*</label>
+                <label for="fname">Country*</label>
                 <p-inputNumber  mode="decimal" inputId="withoutgrouping" [useGrouping]="false">
                 </p-inputNumber>
                 
               </div>
               <div class="item1 ">
-                <label for="fname">First Name*</label>
+                <label for="fname">Contact Number*</label>
                 <input type="text" pInputText formControlName="firstName" >
               </div>
               <div class="item1 ">
-                <label for="fname">First Name*</label>
+                <label for="fname">On Boarding Date*</label>
                 <input type="text" pInputText formControlName="firstName" >
               </div>
               <div class="item1 ">
-                <label for="fname">First Name*</label>
+                <label for="fname">Address*</label>
                 <input type="text" pInputText formControlName="firstName" >
               </div>
               <div class="item9 ">
-                <label for="empAddrss">Employee Address</label>
+                <label for="empAddrss" class="address">Employee Address</label>
                 <textarea
-                  [rows]="7"
+                  [rows]="5"
                   [cols]="25"
                   pInputTextarea
                   [autoResize]="true"
                   formControlName="employeeAddress"
                 ></textarea>
               </div>
+              <div class="buttons">
+                <button pButton type="button" label="Click" ></button>
+                <button pButton type="button" label="Click" ></button>
+              </div>
+              
   
               
               

@@ -10,6 +10,9 @@
         #FFFFFF;
         margin: auto;
         .heading-closeIcon{
+            display: flex;
+            justify-content: space-around;
+           
             p{
                 text-align: center;
             }
@@ -28,7 +31,21 @@
                     display: flex;
                     flex-direction: column;
                     gap: 3px;
+
+                    label{
+                        font-size: 12px;
+                        margin-left: 40px;
+                    }
+                    .error-msg{
+                        font-size: 9px;
+                        color: red;
+
+                    }
                     
+
+                }
+                
+                
 
                 }
                 // .item2{
@@ -50,7 +67,7 @@
   
   
 
-}
+
 
 // ng deep //
 
@@ -69,6 +86,12 @@
         outline-offset: 0;
         box-shadow: none;
         border-color: none;
+    }
+    .address{
+        
+            font-size: 12px;
+            margin-left: 40px;
+        
     }
   
 }
