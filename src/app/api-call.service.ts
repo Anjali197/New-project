@@ -74,7 +74,7 @@ export class ApiCallService {
   }
   getCountry() {
     return this.http.get<[any]>(
-      'https://restcountries.com/v2/all'
+      'https://restcountries.com/v2/all' 
     );
   }
   getCountryCode() {

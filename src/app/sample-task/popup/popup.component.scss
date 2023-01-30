@@ -11,10 +11,11 @@
         margin: auto;
         .heading-closeIcon{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between  ;
            
             p{
                 text-align: center;
+                margin-left: 130px;
             }
            
         }
@@ -58,7 +59,51 @@
 
                 //     }
                 // }
+                .calender {
+                    ::ng-deep {
+                      .p-calendar .p-inputtext {
+                        width: 347px;
+                      }
+                    }
+                  }
     
+            }
+            .buttons{
+                display: flex;
+                justify-content: space-evenly ;
+                gap: 0px;
+            }
+            #btn{
+                ::ng-deep{
+                    color: #3BBCA0;
+                    background-color: white;
+                    border: 2px solid #3BBCA0;
+                    border-radius: 5px;
+                    width: 150px;
+                    font-weight: 700;
+                    font-size: 14px;
+                    font-family:"Raleway", sans-serif ;
+                    
+                }
+                
+
+              
+            }
+            #createbtn{
+                ::ng-deep{
+                    color: #3BBCA0;
+                    background-color: white;
+                    border: 2px solid #3BBCA0;
+                    border-radius: 5px;
+                    width: 150px;
+                    font-weight: 700;
+                    font-size: 14px;
+                    font-family:"Raleway", sans-serif ;
+                    
+                }
+                
+
+              
             }
     
         }
@@ -87,6 +132,39 @@
         outline-offset: 0;
         box-shadow: none;
         border-color: none;
+    }
+    .p-dropdown {
+        width: calc(100% - 20%);
+        margin-left: 40px;
+        border-radius: 3px;
+        appearance: none;
+    }
+    input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+    .p-dropdown-label {
+        
+        font-size: 14px;
+        padding: 7px;
+        color: black;
+        font-family: "roboto", sans-serif;
+        font-weight: 400;
+    }
+    .p-button:enabled:hover{
+        background-color: white;
+        color:black;
+    }
+    .p-button {
+        color: black;
+        background: white;
+        border: none;
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+    }
+    .p-button:focus {
+        box-shadow: none;
     }
     .address{
         

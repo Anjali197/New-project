@@ -16,7 +16,7 @@
               *ngIf="clientName?.invalid && clientName?.touched"
               class="error-msg"
             >
-              First Name is required
+            ClientName is required
             </div>
               
             </div>
@@ -27,18 +27,30 @@
               *ngIf="contactName?.invalid && contactName?.touched"
               class="error-msg"
             >
-              First Name is required
+            ContactName  is required
             </div>
                 
               </div>
               <div class="item1 ">
                 <label for="fname">Designation</label>
-                <input type="text" pInputText formControlName="designation"  [value]="contactName?.value| titlecase ">
+                <input type="text" pInputText formControlName="designation"  >
                 
               </div>
               <div class="item1 ">
                 <label for="fname">E-mail*</label>
                 <input type="text" pInputText formControlName="email" >
+                <div
+                *ngIf="email?.value == '' && email?.touched"
+                class="error-msg"
+              >
+                Email is required
+              </div>
+              <div
+                *ngIf="email?.invalid && email?.touched && email?.dirty && email?.value !== ''"
+                class="error-msg"
+              >
+                Invalid Email
+              </div>
                 
               </div>
               
@@ -51,6 +63,7 @@
                 
                 optionLabel="name"
                 
+                
               >
                 <ng-template let-countries pTemplate="item">
                   <div class="country-item">
@@ -61,12 +74,31 @@
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <input type="number" pInputText formControlName="number" >
+                <input type="number" pInputText formControlName="number"  >
+                <div
+                *ngIf="!number?.value && number?.touched"
+                class="error-msg"
+              >
+                Phone number is required
+              </div>
+              <div
+                *ngIf="
+                  signupForm.get('number')?.hasError('minlength') &&
+                  signupForm.get('number')?.touched
+                "
+                class="error-msg"
+              >
+                Phone Number must contain 10 digits
+              </div>
+              
                 
               </div>
               <div class="item1 ">
                 <label for="fname">On Boarding Date*</label>
-                <input type="text" pInputText formControlName="date" >
+                <p-calendar
+                formControlName="date" [minDate]="previousMonth" [maxDate]="nextMonth"
+                class="calender"
+              ></p-calendar>
               </div>
              
               <div class="item9 ">
@@ -80,9 +112,10 @@
                 ></textarea>
               </div>
               <div class="buttons">
-                <button pButton type="button" label="Click" ></button>
-                <button pButton type="button" label="Click" ></button>
+                <button pButton type="button" label="Discard" id="btn" (click)="onSubmit()" ></button>
+                <button pButton type="button" label="Create" id="createbtn"  (click)="validateForm()"></button>
               </div>
+
               
   
               

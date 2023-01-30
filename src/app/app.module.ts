@@ -35,6 +35,7 @@ import { HeaderComponent } from './sample-task/header/header.component';
 import {InputNumberModule} from 'primeng/inputnumber';
 import { TitleCasePipe } from '@angular/common';
 import { PopupComponent } from './sample-task/popup/popup.component';
+import { PopupButtonComponent } from './sample-task/popup/popup-button/popup-button.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { PopupComponent } from './sample-task/popup/popup.component';
     TestingComponent,
     SidebarComponent,
     HeaderComponent,
-    PopupComponent
+    PopupComponent,
+    PopupButtonComponent
   ],
   imports: [
     BrowserModule,
