@@ -22,7 +22,7 @@
             </div>
             <div class="item1 ">
                 <label for="fname">Contact Person*</label>
-                <input type="text" pInputText formControlName="contactName" >
+                <input type="text" pInputText formControlName="contactName"  [value]="contactName?.value| titlecase ">
                 <div
               *ngIf="contactName?.invalid && contactName?.touched"
               class="error-msg"
@@ -32,41 +32,51 @@
                 
               </div>
               <div class="item1 ">
-                <label for="fname">Designation*</label>
-                <input type="text" pInputText formControlName="firstName" >
+                <label for="fname">Designation</label>
+                <input type="text" pInputText formControlName="designation"  [value]="contactName?.value| titlecase ">
                 
               </div>
               <div class="item1 ">
                 <label for="fname">E-mail*</label>
-                <input type="text" pInputText formControlName="firstName" >
+                <input type="text" pInputText formControlName="email" >
                 
               </div>
+              
               <div class="item1 ">
-                <label for="fname">Country*</label>
-                <p-inputNumber  mode="decimal" inputId="withoutgrouping" [useGrouping]="false">
-                </p-inputNumber>
+                <label for="fname">Country</label>
                 
+                <p-dropdown
+                [options]="countries"
+                formControlName="country"
+                
+                optionLabel="name"
+                
+              >
+                <ng-template let-countries pTemplate="item">
+                  <div class="country-item">
+                    <div >{{ countries.name}}</div>
+                  </div>
+                </ng-template>
+              </p-dropdown>
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <input type="text" pInputText formControlName="firstName" >
+                <input type="number" pInputText formControlName="number" >
+                
               </div>
               <div class="item1 ">
                 <label for="fname">On Boarding Date*</label>
-                <input type="text" pInputText formControlName="firstName" >
+                <input type="text" pInputText formControlName="date" >
               </div>
-              <div class="item1 ">
-                <label for="fname">Address*</label>
-                <input type="text" pInputText formControlName="firstName" >
-              </div>
+             
               <div class="item9 ">
                 <label for="empAddrss" class="address">Employee Address</label>
                 <textarea
-                  [rows]="5"
+                  [rows]="2"
                   [cols]="25"
                   pInputTextarea
                   [autoResize]="true"
-                  formControlName="employeeAddress"
+                  formControlName="address"
                 ></textarea>
               </div>
               <div class="buttons">

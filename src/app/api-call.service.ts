@@ -72,4 +72,15 @@ export class ApiCallService {
       'http://164.52.200.24:6204/users/emp-code/' + code
     );
   }
+  getCountry() {
+    return this.http.get<[any]>(
+      'https://restcountries.com/v2/all'
+    );
+  }
+  getCountryCode() {
+    return this.http.get<[any]>(
+      'https://restcountries.eu/rest/v2/all'
+    );
+  }
+  
 }
