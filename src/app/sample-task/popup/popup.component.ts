@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ApiCallService } from 'src/app/api-call.service';
+import { PopupService } from './popup.service';
 
 @Component({
   selector: 'app-popup',
@@ -15,10 +16,16 @@ countries: any;
   code: any;
   previousMonth = new Date();
   nextMonth = new Date();
+mobileCode: any;
+selectedCountry: any;
+countryCode: any;
+  msgs: any;
+  // countries: any[];
   // newName: any;
   // names: string[] = [];
 
-  constructor(private getApi: ApiCallService,){
+  constructor(private getApi: ApiCallService,  private signInService: PopupService,
+    private messageService: MessageService){
     this.previousMonth.setMonth(this.previousMonth.getMonth() - 2);
     this.nextMonth.setMonth(this.nextMonth.getMonth() +1 );
   
@@ -26,7 +33,7 @@ countries: any;
   }
   ngOnInit(): void {
     
-    
+    this.getCountry();
     // this.getApi.getCountry().subscribe((response) => {
     //   console.log('res', response[0].name);
 
@@ -70,7 +77,7 @@ countries: any;
   get number() {
     return this.signupForm.get('number');
   }
-  signUser(item: any) {}
+ 
   onSubmit() {
     if (this.signupForm.dirty || this.signupForm.invalid) {
       this.signupForm.reset();
@@ -91,18 +98,55 @@ countries: any;
     //   alert("Name already exists");
     // }
   }
-
-  select() {
-    let code: any = this.signupForm.controls['country'];
-
-    this.getApi.getCountry(code.value.name).subscribe((ressppo) => {
-      this.neList = ressppo.countryCode;
-      this.code = this.neList;
-      console.log(ressppo);
+  signUser(item: any) {
+   
+    
+    if (this.signupForm.valid) {
+      console.log("condition success");
       
-  })
+      this.signInService.signIn(item, this.neList).subscribe((response) => {
+        console.log('results', response);
+        console.log('message', response.message);
+        this.msgs = response.message;
+        console.log(this.msgs);
+
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Success',
+          detail: this.msgs,
+        });
+      });
+    }
+
+    console.log('signupForm', item);
+  }
+
+//   select() {
+//     let code: any = this.signupForm.controls['country'];
+
+//     this.getApi.getCountry(code.value.name).subscribe((ressppo) => {
+     
+          
+//       this.neList = ressppo.countryCode;
+//       this.code = this.neList;
+//       console.log(ressppo);
+      
+//   })
+  
 
   
 
+// }
+getCountry() {
+  // make API call to get the list of countries
+  this.getApi.getCountry().subscribe(data => {
+    this.countries = data;
+  });
+}
+
+getCountryCode(event:any) {
+  // make API call to get the mobile code for the selected country
+  const countryCode = event.value.mobileCode;
+  console.log('Selected country code: ', countryCode);
 }
 }

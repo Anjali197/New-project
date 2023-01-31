@@ -4,8 +4,8 @@
     background-color:  #D2D2D2;
 
     .messageBox{
-        width: calc(100% - 72%);
-        height: calc(100vh - 20px);
+        width: calc(100% - 75%);
+        height: calc(100vh - 150px);
         background-color: 
         #FFFFFF;
         margin: auto;
@@ -38,7 +38,7 @@
                     gap: 3px;
 
                     label{
-                        font-size: 12px;
+                        font-size: 10px;
                         margin-left: 40px;
                         font-family: "roboto", sans-serif;
                         color: #878787;
@@ -70,7 +70,7 @@
                 .calender {
                     ::ng-deep {
                       .p-calendar .p-inputtext {
-                        width: 347px;
+                        width: 387px;
                       }
                     }
                   }
@@ -131,7 +131,7 @@
 
 ::ng-deep {
     .p-inputtext {
-        height: 36px;
+        height: 32px;
         width: calc(100% - 20%);
         margin-left: 40px;
         border-radius: 3px;

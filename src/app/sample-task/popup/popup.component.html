@@ -62,7 +62,8 @@
                 formControlName="country"
                 
                 optionLabel="name"
-                (onChange)="select()" >
+                (onChange)="getCountryCode($event)"
+                >
                 <ng-template let-countries pTemplate="item">
                   <div class="country-item">
                     <div >{{ countries.name}}</div>
@@ -72,7 +73,7 @@
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <input type="number" pInputText formControlName="number" [value]="code" >
+                <input type="number" pInputText formControlName="number" [value]="getCountryCode"    >
                 <div
                 *ngIf="!number?.value && number?.touched"
                 class="error-msg"
@@ -112,7 +113,7 @@
               </div><br>
               <div class="buttons">
                 <button pButton type="button" label="Discard" id="btn" (click)="onSubmit()" ></button>
-                <button pButton type="button" label="Create" id="createbtn"  (click)="validateForm()"></button>
+                <button pButton type="button" label="Create" id="createbtn"  (click)="signUser(signupForm.value)"></button>
               </div>
 
               
