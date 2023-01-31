@@ -16,6 +16,10 @@
             p{
                 text-align: center;
                 margin-left: 130px;
+                font-family: "Raleway", sans-serif;
+                font-size: 20px;
+                font-weight: 700;
+                color: #000000;
             }
            
         }
@@ -34,9 +38,12 @@
                     gap: 3px;
 
                     label{
-                        font-size: 10px;
+                        font-size: 12px;
                         margin-left: 40px;
                         font-family: "roboto", sans-serif;
+                        color: #878787;
+                        font-weight: 600;
+
                     }
                     .error-msg{
                         font-size: 9px;
@@ -124,7 +131,7 @@
 
 ::ng-deep {
     .p-inputtext {
-        height: 30px;
+        height: 36px;
         width: calc(100% - 20%);
         margin-left: 40px;
         border-radius: 3px;

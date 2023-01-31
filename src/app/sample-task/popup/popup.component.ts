@@ -19,28 +19,28 @@ countries: any;
   // names: string[] = [];
 
   constructor(private getApi: ApiCallService,){
-    this.previousMonth.setMonth(this.previousMonth.getMonth() - 31);
-    this.nextMonth.setMonth(this.nextMonth.getMonth() + 1);
+    this.previousMonth.setMonth(this.previousMonth.getMonth() - 2);
+    this.nextMonth.setMonth(this.nextMonth.getMonth() +1 );
   
     
   }
   ngOnInit(): void {
     
     
-    this.getApi.getCountry().subscribe((response) => {
-      console.log('res', response[0].name);
+    // this.getApi.getCountry().subscribe((response) => {
+    //   console.log('res', response[0].name);
 
-      this.countries = response;
-      console.log(this.countries);
-      response.forEach(element => {
-        console.log(
+    //   this.countries = response;
+    //   console.log(this.countries);
+    //   response.forEach(element => {
+    //     console.log(
 
-          element.name
-        );
+    //       element.name
+    //     );
         
-      });
+    //   });
       
-    });
+    // });
 
 
   }
@@ -92,15 +92,17 @@ countries: any;
     // }
   }
 
-//   select() {
-//     let code: any = this.signupForm.controls['number'];
+  select() {
+    let code: any = this.signupForm.controls['country'];
 
-//     this.getApi.getCountry(code.value.name).subscribe((ressppo) => {
-//       this.neList = ressppo;
-//       this.code = this.neList.countryCode;
-//   })
+    this.getApi.getCountry(code.value.name).subscribe((ressppo) => {
+      this.neList = ressppo.countryCode;
+      this.code = this.neList;
+      console.log(ressppo);
+      
+  })
 
   
 
-// }
+}
 }

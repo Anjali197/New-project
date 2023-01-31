@@ -62,9 +62,7 @@
                 formControlName="country"
                 
                 optionLabel="name"
-                
-                
-              >
+                (onChange)="select()" >
                 <ng-template let-countries pTemplate="item">
                   <div class="country-item">
                     <div >{{ countries.name}}</div>
@@ -74,7 +72,7 @@
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <input type="number" pInputText formControlName="number"  >
+                <input type="number" pInputText formControlName="number" [value]="code" >
                 <div
                 *ngIf="!number?.value && number?.touched"
                 class="error-msg"
@@ -98,13 +96,14 @@
                 <p-calendar
                 formControlName="date" [minDate]="previousMonth" [maxDate]="nextMonth"
                 class="calender"
+                dateFormat="dd/mm/yy"
               ></p-calendar>
               </div>
              
               <div class="item9 item1">
                 <label for="empAddrss" class="address">Employee Address</label>
                 <textarea
-                  [rows]="2"
+                  [rows]="3"
                   [cols]="25"
                   pInputTextarea
                   [autoResize]="true"
