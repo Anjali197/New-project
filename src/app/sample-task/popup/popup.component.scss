@@ -27,15 +27,16 @@
             .inputBoxes{
                 display: flex;
                 flex-direction: column;
-                gap: 15px;
+                gap: 18px;
                 .item1{
                     display: flex;
                     flex-direction: column;
                     gap: 3px;
 
                     label{
-                        font-size: 12px;
+                        font-size: 10px;
                         margin-left: 40px;
+                        font-family: "roboto", sans-serif;
                     }
                     .error-msg{
                         font-size: 9px;
@@ -70,16 +71,19 @@
             }
             .buttons{
                 display: flex;
-                justify-content: space-evenly ;
-                gap: 0px;
+                align-items: center;
+  justify-content: center;
+  gap: 20px;
+                
             }
             #btn{
                 ::ng-deep{
                     color: #3BBCA0;
                     background-color: white;
-                    border: 2px solid #3BBCA0;
+                    border: 1.5px solid #3BBCA0;
                     border-radius: 5px;
-                    width: 150px;
+                    width: 140px;
+                    height: 40px;
                     font-weight: 700;
                     font-size: 14px;
                     font-family:"Raleway", sans-serif ;
@@ -91,11 +95,12 @@
             }
             #createbtn{
                 ::ng-deep{
-                    color: #3BBCA0;
-                    background-color: white;
-                    border: 2px solid #3BBCA0;
+                    color:  white;
+                    background-color:#3BBCA0;
+                    border: 2px solid white;
                     border-radius: 5px;
-                    width: 150px;
+                    width: 140px;
+                    height: 42px;
                     font-weight: 700;
                     font-size: 14px;
                     font-family:"Raleway", sans-serif ;
@@ -123,6 +128,10 @@
         width: calc(100% - 20%);
         margin-left: 40px;
         border-radius: 3px;
+        color: #000000;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "roboto", sans-serif;
     }
     .p-inputtext:enabled:hover {
         border-color: #3BBCA0;

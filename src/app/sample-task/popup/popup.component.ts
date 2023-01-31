@@ -15,8 +15,8 @@ countries: any;
   code: any;
   previousMonth = new Date();
   nextMonth = new Date();
-  newName: any;
-  names: string[] = [];
+  // newName: any;
+  // names: string[] = [];
 
   constructor(private getApi: ApiCallService,){
     this.previousMonth.setMonth(this.previousMonth.getMonth() - 31);
@@ -85,11 +85,11 @@ countries: any;
       this.email?.markAsTouched();
       
     }
-    if (this.names.indexOf(this.newName) === -1) {
-      this.names.push(this.newName);
-    } else {
-      alert("Name already exists");
-    }
+    // if (this.names.indexOf(this.newName) === -1) {
+    //   this.names.push(this.newName);
+    // } else {
+    //   alert("Name already exists");
+    // }
   }
 
 //   select() {

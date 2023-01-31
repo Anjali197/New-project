@@ -94,14 +94,14 @@
                 
               </div>
               <div class="item1 ">
-                <label for="fname">On Boarding Date*</label>
+                <label for="fname">On Boarding Date</label>
                 <p-calendar
                 formControlName="date" [minDate]="previousMonth" [maxDate]="nextMonth"
                 class="calender"
               ></p-calendar>
               </div>
              
-              <div class="item9 ">
+              <div class="item9 item1">
                 <label for="empAddrss" class="address">Employee Address</label>
                 <textarea
                   [rows]="2"
@@ -110,7 +110,7 @@
                   [autoResize]="true"
                   formControlName="address"
                 ></textarea>
-              </div>
+              </div><br>
               <div class="buttons">
                 <button pButton type="button" label="Discard" id="btn" (click)="onSubmit()" ></button>
                 <button pButton type="button" label="Create" id="createbtn"  (click)="validateForm()"></button>
