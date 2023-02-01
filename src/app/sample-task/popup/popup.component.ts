@@ -20,6 +20,12 @@ mobileCode: any;
 selectedCountry: any;
 countryCode: any;
   msgs: any;
+  // countries!: any;
+  // selectedCountry: any;
+  selectedMobileCode: any;
+callingCode: any;
+  form: any;
+
   // countries: any[];
   // newName: any;
   // names: string[] = [];
@@ -32,8 +38,13 @@ countryCode: any;
     
   }
   ngOnInit(): void {
+
+    this.getApi.getCountry().subscribe((res) => {
+      console.log('res', res);
+      this.countries = res;
+    });
     
-    this.getCountry();
+    // this.getCountry();
     // this.getApi.getCountry().subscribe((response) => {
     //   console.log('res', response[0].name);
 
@@ -51,17 +62,18 @@ countryCode: any;
 
 
   }
-  
-
+ 
   signupForm = new FormGroup({
     clientName: new FormControl('', [Validators.required]),
     contactName: new FormControl('', [Validators.required]),
     designation: new FormControl('',[Validators.required] ),
     email: new FormControl('', [Validators.required,Validators.email]),
     country:new FormControl('' ),
+    callingCode: new FormControl(''),
     number:new FormControl('', [Validators.required, Validators.minLength(10)]),
     date:new FormControl('' ),
     address:new FormControl('' ),
+    // code:new FormControl('' )
 
     
   });
@@ -120,6 +132,13 @@ countryCode: any;
 
     console.log('signupForm', item);
   }
+  onCountryChange(event: { target: { value: any; }; }) {
+     let code: any = this.signupForm.controls['country'];
+    const selectedCountry = this.countries.find((c: { name: any; }) => c.name === event.target.value);
+    this.form.patchValue({
+      code: selectedCountry.callingCode
+    });
+  }
 
 //   select() {
 //     let code: any = this.signupForm.controls['country'];
@@ -144,9 +163,9 @@ getCountry() {
   });
 }
 
-getCountryCode(event:any) {
-  // make API call to get the mobile code for the selected country
-  const countryCode = event.value.mobileCode;
-  console.log('Selected country code: ', countryCode);
-}
+// getCountryCode(event:any) {
+//   // make API call to get the mobile code for the selected country
+//   const countryCode = event.value.mobileCode;
+//   console.log('Selected country code: ', countryCode);
+// }
 }
