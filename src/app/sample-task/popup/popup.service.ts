@@ -24,14 +24,21 @@ export class PopupService {
   }
   getFormatedDate(date: Date) {
     if (date) {
-      const newDate = new Date(date)
-        .toLocaleDateString()
-        .split('/')
-        .reverse()
-        .join('-');
 
-      return newDate;
-    }
+      
+      const newDate = new Date(date)
+    
+    let  month = '' + (newDate.getMonth() + 1);
+    let  day = '' + newDate.getDate();
+     let year = newDate.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
     return;
   }
 }

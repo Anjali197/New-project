@@ -6,7 +6,7 @@
       </div>
         
         <div class="form">
-            <form [formGroup]="signupForm" (ngSubmit)="signUser(signupForm.value)" >
+            <form [formGroup]="signupForm"  >
                 <div class="inputBoxes">
 
                  <div class="item1 ">
@@ -60,21 +60,22 @@
                 <p-dropdown
                 [options]="countries"
                 formControlName="country"
-                
                 optionLabel="name"
-                [options]="countries"   (onChange)="onCountryChange($event)"
-               
+                (onChange)="changeCode($event)"
+                  
                 >
-                <ng-template let-countries pTemplate="item">
+                <!-- <ng-template let-countries pTemplate="item">
                   <div class="country-item">
-                    <div >{{ countries.name}}</div>
+                    <div >{{ countries}}</div>
                   </div>
-                </ng-template>
+                </ng-template> -->
               </p-dropdown>
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <input type="number" pInputText formControlName="number" [value]="code" >
+                <p-inputNumber formControlName="number"  prefix={{phoneCode}}></p-inputNumber>
+
+                
                 <div
                 *ngIf="!number?.value && number?.touched"
                 class="error-msg"
@@ -114,7 +115,7 @@
               </div><br>
               <div class="buttons">
                 <button pButton type="button" label="Discard" id="btn" (click)="onSubmit()" ></button>
-                <button pButton type="button" label="Create" id="createbtn"  (click)="validateForm()"></button>
+                <button pButton type="button" label="Create" id="createbtn"  (click)="signUser(signupForm.value)"></button>
               </div>
 
               
