@@ -31,6 +31,7 @@ export class PopupComponent {
   countryCode: any;
   msgs: any;
   phoneCode:any="+98";
+  value= ""
   // countries: any[];
   // newName: any;
   // names: string[] = [];

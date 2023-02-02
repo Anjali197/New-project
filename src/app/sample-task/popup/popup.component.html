@@ -73,7 +73,7 @@
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <p-inputNumber formControlName="number"  prefix={{phoneCode}}></p-inputNumber>
+                <p-inputNumber formControlName="number"  [useGrouping]="false" [(ngModel)]="value"  prefix={{phoneCode}}></p-inputNumber>
 
                 
                 <div
