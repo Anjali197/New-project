@@ -1,9 +1,11 @@
-<div class="mainContainer">
+<p-button (click)="showModalDialog()" icon="pi pi-external-link" label="Show"></p-button>
+
+<div class="mainContainer" >
+  
     <div class="messageBox">
-      <div class="heading-closeIcon">
-        <p>Create Client</p>
-        <button pButton pRipple type="button" icon="pi pi-times" ></button>
-      </div>
+      <p-dialog  [(visible)]="displayModal" [modal]="true" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false" [responsive]="true" header="Create Client" >
+     
         
         <div class="form">
             <form [formGroup]="signupForm"  >
@@ -73,7 +75,7 @@
               </div>
               <div class="item1 ">
                 <label for="fname">Contact Number*</label>
-                <p-inputNumber formControlName="number"  [useGrouping]="false" [(ngModel)]="value"  prefix={{phoneCode}}></p-inputNumber>
+                <p-inputNumber formControlName="number"  [useGrouping]="false" [(ngModel)]="value"  prefix={{phoneCode}} id="contactNo"></p-inputNumber>
 
                 
                 <div
@@ -103,7 +105,7 @@
               ></p-calendar>
               </div>
              
-              <div class="item9 item1">
+              <div class="  item9 item1">
                 <label for="empAddrss" class="address">Employee Address</label>
                 <textarea
                   [rows]="3"
@@ -127,6 +129,8 @@
             </form>
            
         </div>
-        
+      </p-dialog>
     </div>
+ 
 </div>
+

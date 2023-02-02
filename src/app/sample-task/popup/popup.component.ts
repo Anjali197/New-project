@@ -21,6 +21,10 @@ interface countriesCode {
   providers: [MessageService],
 })
 export class PopupComponent {
+  showModalDialog() {
+    this.displayModal = true;
+}
+  displayModal: any;
   countries: countriesCode[] = country;
   neList: any;
   code: any;

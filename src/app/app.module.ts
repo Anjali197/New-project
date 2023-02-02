@@ -36,6 +36,8 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { TitleCasePipe } from '@angular/common';
 import { PopupComponent } from './sample-task/popup/popup.component';
 import { PopupButtonComponent } from './sample-task/popup/popup-button/popup-button.component';
+import {DialogModule} from 'primeng/dialog';
+
 
 
 @NgModule({
@@ -71,7 +73,7 @@ import { PopupButtonComponent } from './sample-task/popup/popup-button/popup-but
     DatePipe,
     MessagesModule,
     MessageModule, ToastModule,
-    TabViewModule,InputNumberModule, TitleCasePipe
+    TabViewModule,InputNumberModule, TitleCasePipe,DialogModule
 
 
 

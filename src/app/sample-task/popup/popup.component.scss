@@ -1,6 +1,6 @@
 .mainContainer{
-    width: 100vw;
-    height: 100vh;
+    width: 0;
+    // height: 100vh;
     background-color:  #D2D2D2;
 
     .messageBox{
@@ -15,7 +15,7 @@
            
             p{
                 text-align: center;
-                margin-left: 170px;
+                margin-left: 120px;
                 font-family: "Raleway", sans-serif;
                 font-size: 20px;
                 font-weight: 700;
@@ -58,6 +58,15 @@
                 
 
                 }
+                // #contactNo{
+                   
+                //     ::ng-deep{
+                //         .p-inputnumber-input {
+                //             flex: 1 1 auto;
+                //             width: calc(100% - 20%);
+                //         }
+                //     }
+                // }
                 // .item2{
                 //     width: 500px;
                 //     ::ng-deep{
@@ -69,8 +78,8 @@
                 // }
                 .calender {
                     ::ng-deep {
-                      .p-calendar .p-inputtext {
-                        width: 387px;
+                      .p-calendar  {
+                        width: 400px;
                       }
                     }
                   }
@@ -119,8 +128,7 @@
             }
     
         }
-    
-
+        
     }
   
   
@@ -194,6 +202,32 @@ input::-webkit-inner-spin-button {
       .p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
         color: #3bbca0;
       }
+     .p-inputnumber-input {
+ 
+    width: 340px;
+}
+.p-dialog .p-dialog-header .p-dialog-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-left: 128px;
+    font-family:"Raleway", sans-serif  ;
+}
+.p-inputnumber{
+    width:300 px;
+}
+.p-dialog {
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    max-height: 90%;
+    width: 45%;
+    transform: scale(1);
+    position: relative;
+}
+.p-inputnumber, .p-inputnumber {
+    display: inline-flex;
+    width: 403px;
+}
     .address{
         
             font-size: 12px;

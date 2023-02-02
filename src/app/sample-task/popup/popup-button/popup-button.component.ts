@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./popup-button.component.scss']
 })
 export class PopupButtonComponent {
+  show=false
+  openpopup(){
+    this.show=true
+  }
 
 }
